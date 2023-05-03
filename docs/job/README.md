@@ -25,8 +25,8 @@ s = sdk.SDK(
 
 
 req = operations.CancelJobRequest(
-    job_number="nihil",
-    project_slug="repellat",
+    job_number='nihil',
+    project_slug='repellat',
 )
 
 res = s.job.cancel_job(req)
@@ -53,8 +53,8 @@ s = sdk.SDK(
 
 
 req = operations.GetJobArtifactsRequest(
-    job_number="quibusdam",
-    project_slug="sed",
+    job_number='quibusdam',
+    project_slug='sed',
 )
 
 res = s.job.get_job_artifacts(req)
@@ -81,8 +81,8 @@ s = sdk.SDK(
 
 
 req = operations.GetJobDetailsRequest(
-    job_number="saepe",
-    project_slug="pariatur",
+    job_number='saepe',
+    project_slug='pariatur',
 )
 
 res = s.job.get_job_details(req)
@@ -109,8 +109,8 @@ s = sdk.SDK(
 
 
 req = operations.GetTestsRequest(
-    job_number="accusantium",
-    project_slug="consequuntur",
+    job_number='accusantium',
+    project_slug='consequuntur',
 )
 
 res = s.job.get_tests(req)

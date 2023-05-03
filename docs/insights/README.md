@@ -31,8 +31,8 @@ s = sdk.SDK(
 
 
 req = operations.GetAllInsightsBranchesRequest(
-    project_slug="accusamus",
-    workflow_name="non",
+    project_slug='accusamus',
+    workflow_name='non',
 )
 
 res = s.insights.get_all_insights_branches(req)
@@ -60,7 +60,7 @@ s = sdk.SDK(
 
 
 req = operations.GetFlakyTestsRequest(
-    project_slug="occaecati",
+    project_slug='occaecati',
 )
 
 res = s.insights.get_flaky_tests(req)
@@ -88,12 +88,12 @@ s = sdk.SDK(
 
 
 req = operations.GetJobTimeseriesRequest(
-    branch="enim",
+    branch='enim',
     end_date=dateutil.parser.isoparse('2020-02-08T20:51:42.354Z'),
-    granularity="hourly",
-    project_slug="provident",
+    granularity=operations.GetJobTimeseriesGranularityEnum.HOURLY,
+    project_slug='provident',
     start_date=dateutil.parser.isoparse('2021-09-06T10:36:33.442Z'),
-    workflow_name="blanditiis",
+    workflow_name='blanditiis',
 )
 
 res = s.insights.get_job_timeseries(req)
@@ -121,14 +121,14 @@ s = sdk.SDK(
 
 
 req = operations.GetOrgSummaryDataRequest(
-    org_slug="deleniti",
+    org_slug='deleniti',
     project_names={
-        "amet": "deserunt",
-        "nisi": "vel",
-        "natus": "omnis",
-        "molestiae": "perferendis",
+        "amet": 'deserunt',
+        "nisi": 'vel',
+        "natus": 'omnis',
+        "molestiae": 'perferendis',
     },
-    reporting_window="last-24-hours",
+    reporting_window=operations.GetOrgSummaryDataReportingWindowEnum.LAST_24_HOURS,
 )
 
 res = s.insights.get_org_summary_data(req)
@@ -156,11 +156,11 @@ s = sdk.SDK(
 
 req = operations.GetProjectWorkflowJobMetricsRequest(
     all_branches=False,
-    branch="magnam",
-    page_token="distinctio",
-    project_slug="id",
-    reporting_window="last-90-days",
-    workflow_name="labore",
+    branch='magnam',
+    page_token='distinctio',
+    project_slug='id',
+    reporting_window=operations.GetProjectWorkflowJobMetricsReportingWindowEnum.LAST_90_DAYS,
+    workflow_name='labore',
 )
 
 res = s.insights.get_project_workflow_job_metrics(req)
@@ -188,10 +188,10 @@ s = sdk.SDK(
 
 req = operations.GetProjectWorkflowMetricsRequest(
     all_branches=False,
-    branch="suscipit",
-    page_token="natus",
-    project_slug="nobis",
-    reporting_window="last-24-hours",
+    branch='suscipit',
+    page_token='natus',
+    project_slug='nobis',
+    reporting_window=operations.GetProjectWorkflowMetricsReportingWindowEnum.LAST_24_HOURS,
 )
 
 res = s.insights.get_project_workflow_metrics(req)
@@ -220,12 +220,12 @@ s = sdk.SDK(
 
 req = operations.GetProjectWorkflowRunsRequest(
     all_branches=False,
-    branch="vero",
+    branch='vero',
     end_date=dateutil.parser.isoparse('2022-11-24T10:55:00.183Z'),
-    page_token="magnam",
-    project_slug="et",
+    page_token='magnam',
+    project_slug='et',
     start_date=dateutil.parser.isoparse('2022-04-17T13:06:08.135Z'),
-    workflow_name="provident",
+    workflow_name='provident',
 )
 
 res = s.insights.get_project_workflow_runs(req)
@@ -253,9 +253,9 @@ s = sdk.SDK(
 
 req = operations.GetProjectWorkflowTestMetricsRequest(
     all_branches=False,
-    branch="quos",
-    project_slug="sint",
-    workflow_name="accusantium",
+    branch='quos',
+    project_slug='sint',
+    workflow_name='accusantium',
 )
 
 res = s.insights.get_project_workflow_test_metrics(req)
@@ -286,14 +286,14 @@ s = sdk.SDK(
 
 req = operations.GetProjectWorkflowsPageDataRequest(
     branches={
-        "reiciendis": "mollitia",
-        "ad": "eum",
-        "dolor": "necessitatibus",
+        "reiciendis": 'mollitia',
+        "ad": 'eum',
+        "dolor": 'necessitatibus',
     },
-    project_slug="odit",
-    reporting_window="last-90-days",
+    project_slug='odit',
+    reporting_window=operations.GetProjectWorkflowsPageDataReportingWindowEnum.LAST_90_DAYS,
     workflow_names={
-        "iure": "doloribus",
+        "iure": 'doloribus',
     },
 )
 
@@ -323,13 +323,13 @@ s = sdk.SDK(
 req = operations.GetWorkflowSummaryRequest(
     all_branches=False,
     branches={
-        "eius": "maxime",
-        "deleniti": "facilis",
-        "in": "architecto",
-        "architecto": "repudiandae",
+        "eius": 'maxime',
+        "deleniti": 'facilis',
+        "in": 'architecto',
+        "architecto": 'repudiandae',
     },
-    project_slug="ullam",
-    workflow_name="expedita",
+    project_slug='ullam',
+    workflow_name='expedita',
 )
 
 res = s.insights.get_workflow_summary(req)

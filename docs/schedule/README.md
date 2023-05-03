@@ -27,14 +27,14 @@ s = sdk.SDK(
 
 req = operations.CreateScheduleRequest(
     request_body=operations.CreateScheduleCreateScheduleParameters(
-        attribution_actor="current",
-        description="similique",
-        name="Cristina Hahn",
+        attribution_actor=operations.CreateScheduleCreateScheduleParametersAttributionActorEnum.CURRENT,
+        description='similique',
+        name='Cristina Hahn',
         parameters={
-            "officiis": "qui",
-            "dolorum": "a",
-            "esse": "harum",
-            "iusto": "ipsum",
+            "officiis": 'qui',
+            "dolorum": 'a',
+            "esse": 'harum',
+            "iusto": 'ipsum',
         },
         timetable=operations.CreateScheduleCreateScheduleParametersTimetable2(
             days_of_month=[
@@ -44,8 +44,8 @@ req = operations.CreateScheduleRequest(
                 253941,
             ],
             days_of_week=[
-                "SAT",
-                "FRI",
+                operations.CreateScheduleCreateScheduleParametersTimetable2DaysOfWeekEnum.SAT,
+                operations.CreateScheduleCreateScheduleParametersTimetable2DaysOfWeekEnum.FRI,
             ],
             hours_of_day=[
                 471752,
@@ -53,12 +53,12 @@ req = operations.CreateScheduleRequest(
                 711584,
             ],
             months=[
-                "NOV",
+                operations.CreateScheduleCreateScheduleParametersTimetable2MonthsEnum.NOV,
             ],
             per_hour=424685,
         ),
     ),
-    project_slug="libero",
+    project_slug='libero',
 )
 
 res = s.schedule.create_schedule(req)
@@ -85,7 +85,7 @@ s = sdk.SDK(
 
 
 req = operations.DeleteScheduleByIDRequest(
-    schedule_id="5a73429c-db1a-4842-abb6-79d2322715bf",
+    schedule_id='5a73429c-db1a-4842-abb6-79d2322715bf',
 )
 
 res = s.schedule.delete_schedule_by_id(req)
@@ -112,7 +112,7 @@ s = sdk.SDK(
 
 
 req = operations.GetScheduleByIDRequest(
-    schedule_id="0cbb1e31-b8b9-40f3-843a-1108e0adcf4b",
+    schedule_id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
 )
 
 res = s.schedule.get_schedule_by_id(req)
@@ -139,8 +139,8 @@ s = sdk.SDK(
 
 
 req = operations.ListSchedulesForProjectRequest(
-    page_token="cupiditate",
-    project_slug="qui",
+    page_token='cupiditate',
+    project_slug='qui',
 )
 
 res = s.schedule.list_schedules_for_project(req)
@@ -168,14 +168,14 @@ s = sdk.SDK(
 
 req = operations.UpdateScheduleRequest(
     request_body=operations.UpdateScheduleUpdateScheduleParameters(
-        attribution_actor="current",
-        description="quae",
-        name="Darren McClure",
+        attribution_actor=operations.UpdateScheduleUpdateScheduleParametersAttributionActorEnum.CURRENT,
+        description='quae',
+        name='Darren McClure',
         parameters={
-            "omnis": "quis",
-            "ipsum": "delectus",
-            "voluptate": "consectetur",
-            "vero": "tenetur",
+            "omnis": 'quis',
+            "ipsum": 'delectus',
+            "voluptate": 'consectetur',
+            "vero": 'tenetur',
         },
         timetable=operations.UpdateScheduleUpdateScheduleParametersTimetable(
             days_of_month=[
@@ -183,25 +183,25 @@ req = operations.UpdateScheduleRequest(
                 715561,
             ],
             days_of_week=[
-                "MON",
-                "THU",
-                "THU",
-                "FRI",
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.MON,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.THU,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.THU,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.FRI,
             ],
             hours_of_day=[
                 293020,
                 844550,
             ],
             months=[
-                "DEC",
-                "APR",
-                "AUG",
-                "MAR",
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.DEC,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.APR,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.AUG,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.MAR,
             ],
             per_hour=974259,
         ),
     ),
-    schedule_id="5d2cff7c-70a4-4562-ad43-6813f16d9f5f",
+    schedule_id='5d2cff7c-70a4-4562-ad43-6813f16d9f5f',
 )
 
 res = s.schedule.update_schedule(req)

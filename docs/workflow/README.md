@@ -26,8 +26,8 @@ s = sdk.SDK(
 
 
 req = operations.ApprovePendingApprovalJobByIDRequest(
-    approval_request_id="a19f1d17-0513-439d-8808-6a1840394c26",
-    id="071f93f5-f064-42da-87af-515cc413aa63",
+    approval_request_id='a19f1d17-0513-439d-8808-6a1840394c26',
+    id='071f93f5-f064-42da-87af-515cc413aa63',
 )
 
 res = s.workflow.approve_pending_approval_job_by_id(req)
@@ -54,7 +54,7 @@ s = sdk.SDK(
 
 
 req = operations.CancelWorkflowRequest(
-    id="aae8d678-64db-4b67-9fd5-e60b375ed4f6",
+    id='aae8d678-64db-4b67-9fd5-e60b375ed4f6',
 )
 
 res = s.workflow.cancel_workflow(req)
@@ -81,7 +81,7 @@ s = sdk.SDK(
 
 
 req = operations.GetWorkflowByIDRequest(
-    id="fbee41f3-3317-4fe3-9b60-eb1ea426555b",
+    id='fbee41f3-3317-4fe3-9b60-eb1ea426555b',
 )
 
 res = s.workflow.get_workflow_by_id(req)
@@ -108,7 +108,7 @@ s = sdk.SDK(
 
 
 req = operations.ListWorkflowJobsRequest(
-    id="a3c28744-ed53-4b88-b3a8-d8f5c0b2f2fb",
+    id='a3c28744-ed53-4b88-b3a8-d8f5c0b2f2fb',
 )
 
 res = s.workflow.list_workflow_jobs(req)
@@ -139,12 +139,12 @@ req = operations.RerunWorkflowRequest(
         enable_ssh=False,
         from_failed=False,
         jobs=[
-            "b194a276-b269-416f-a1f0-8f4294e3698f",
-            "447f603e-8b44-45e8-8ca5-5efd20e457e1",
+            'b194a276-b269-416f-a1f0-8f4294e3698f',
+            '447f603e-8b44-45e8-8ca5-5efd20e457e1',
         ],
         sparse_tree=False,
     ),
-    id="858b6a89-fbe3-4a5a-a8e4-824d0ab40750",
+    id='858b6a89-fbe3-4a5a-a8e4-824d0ab40750',
 )
 
 res = s.workflow.rerun_workflow(req)

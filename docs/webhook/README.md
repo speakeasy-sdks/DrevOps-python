@@ -27,15 +27,15 @@ s = sdk.SDK(
 
 req = operations.CreateWebhookRequestBody(
     events=[
-        "workflow-completed",
+        operations.CreateWebhookRequestBodyEventsEnum.WORKFLOW_COMPLETED,
     ],
-    name="Vicky Lynch",
+    name='Vicky Lynch',
     scope=operations.CreateWebhookRequestBodyScope(
-        id="6b144290-7474-4778-a7bd-466d28c10ab3",
-        type="project",
+        id='6b144290-7474-4778-a7bd-466d28c10ab3',
+        type=operations.CreateWebhookRequestBodyScopeTypeEnum.PROJECT,
     ),
-    signing_secret="quo",
-    url="illum",
+    signing_secret='quo',
+    url='illum',
     verify_tls=False,
 )
 
@@ -63,7 +63,7 @@ s = sdk.SDK(
 
 
 req = operations.DeleteWebhookRequest(
-    webhook_id="ca425190-4e52-43c7-a0bc-7178e4796f2a",
+    webhook_id='ca425190-4e52-43c7-a0bc-7178e4796f2a',
 )
 
 res = s.webhook.delete_webhook(req)
@@ -90,7 +90,7 @@ s = sdk.SDK(
 
 
 req = operations.GetWebhookByIDRequest(
-    webhook_id="70c68828-2aa4-4825-a2f2-22e9817ee17c",
+    webhook_id='70c68828-2aa4-4825-a2f2-22e9817ee17c',
 )
 
 res = s.webhook.get_webhook_by_id(req)
@@ -117,8 +117,8 @@ s = sdk.SDK(
 
 
 req = operations.GetWebhooksRequest(
-    scope_id="be61e6b7-b95b-4c0a-b3c2-0c4f3789fd87",
-    scope_type="project",
+    scope_id='be61e6b7-b95b-4c0a-b3c2-0c4f3789fd87',
+    scope_type=operations.GetWebhooksScopeTypeEnum.PROJECT,
 )
 
 res = s.webhook.get_webhooks(req)
@@ -147,14 +147,14 @@ s = sdk.SDK(
 req = operations.UpdateWebhookRequest(
     request_body=operations.UpdateWebhookRequestBody(
         events=[
-            "job-completed",
+            operations.UpdateWebhookRequestBodyEventsEnum.JOB_COMPLETED,
         ],
-        name="Kirk Stracke",
-        signing_secret="eveniet",
-        url="asperiores",
+        name='Kirk Stracke',
+        signing_secret='eveniet',
+        url='asperiores',
         verify_tls=False,
     ),
-    webhook_id="d121aa6f-1e67-44bd-b04f-15756082d68e",
+    webhook_id='d121aa6f-1e67-44bd-b04f-15756082d68e',
 )
 
 res = s.webhook.update_webhook(req)

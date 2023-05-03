@@ -30,10 +30,10 @@ s = sdk.SDK(
 
 
 req = operations.ContinuePipelineRequestBody(
-    configuration="praesentium",
-    continuation_key="natus",
+    configuration='praesentium',
+    continuation_key='natus',
     parameters={
-        "sunt": "quo",
+        "sunt": 'quo',
     },
 )
 
@@ -61,7 +61,7 @@ s = sdk.SDK(
 
 
 req = operations.GetPipelineByIDRequest(
-    pipeline_id="ddc69260-1fb5-476b-8d5f-0d30c5fbb258",
+    pipeline_id='ddc69260-1fb5-476b-8d5f-0d30c5fbb258',
 )
 
 res = s.pipeline.get_pipeline_by_id(req)
@@ -88,8 +88,8 @@ s = sdk.SDK(
 
 
 req = operations.GetPipelineByNumberRequest(
-    pipeline_number="dignissimos",
-    project_slug="eaque",
+    pipeline_number='dignissimos',
+    project_slug='eaque',
 )
 
 res = s.pipeline.get_pipeline_by_number(req)
@@ -116,7 +116,7 @@ s = sdk.SDK(
 
 
 req = operations.GetPipelineConfigByIDRequest(
-    pipeline_id="53202c73-d5fe-49b9-8c28-909b3fe49a8d",
+    pipeline_id='53202c73-d5fe-49b9-8c28-909b3fe49a8d',
 )
 
 res = s.pipeline.get_pipeline_config_by_id(req)
@@ -143,8 +143,8 @@ s = sdk.SDK(
 
 
 req = operations.ListMyPipelinesRequest(
-    page_token="provident",
-    project_slug="nobis",
+    page_token='provident',
+    project_slug='nobis',
 )
 
 res = s.pipeline.list_my_pipelines(req)
@@ -172,8 +172,8 @@ s = sdk.SDK(
 
 req = operations.ListPipelinesRequest(
     mine=False,
-    org_slug="libero",
-    page_token="delectus",
+    org_slug='libero',
+    page_token='delectus',
 )
 
 res = s.pipeline.list_pipelines(req)
@@ -200,9 +200,9 @@ s = sdk.SDK(
 
 
 req = operations.ListPipelinesForProjectRequest(
-    branch="quaerat",
-    page_token="quos",
-    project_slug="aliquid",
+    branch='quaerat',
+    page_token='quos',
+    project_slug='aliquid',
 )
 
 res = s.pipeline.list_pipelines_for_project(req)
@@ -229,8 +229,8 @@ s = sdk.SDK(
 
 
 req = operations.ListWorkflowsByPipelineIDRequest(
-    page_token="dolorem",
-    pipeline_id="3323f9b7-7f3a-4410-8674-ebf69280d1ba",
+    page_token='dolorem',
+    pipeline_id='3323f9b7-7f3a-4410-8674-ebf69280d1ba',
 )
 
 res = s.pipeline.list_workflows_by_pipeline_id(req)
@@ -258,14 +258,14 @@ s = sdk.SDK(
 
 req = operations.TriggerPipelineRequest(
     request_body=operations.TriggerPipelineTriggerPipelineParameters(
-        branch="feature/design-new-api",
+        branch='feature/design-new-api',
         parameters={
-            "voluptate": "dolorum",
-            "deleniti": "omnis",
+            "voluptate": 'dolorum',
+            "deleniti": 'omnis',
         },
-        tag="v3.1.4159",
+        tag='v3.1.4159',
     ),
-    project_slug="necessitatibus",
+    project_slug='necessitatibus',
 )
 
 res = s.pipeline.trigger_pipeline(req)

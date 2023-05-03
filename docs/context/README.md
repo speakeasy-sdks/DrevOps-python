@@ -29,10 +29,10 @@ s = sdk.SDK(
 
 req = operations.AddEnvironmentVariableToContextRequest(
     request_body=operations.AddEnvironmentVariableToContextRequestBody(
-        value="some-secret-value",
+        value='some-secret-value',
     ),
-    context_id="05dfc2dd-f7cc-478c-a1ba-928fc816742c",
-    env_var_name="cum",
+    context_id='05dfc2dd-f7cc-478c-a1ba-928fc816742c',
+    env_var_name='cum',
 )
 
 res = s.context.add_environment_variable_to_context(req)
@@ -59,10 +59,10 @@ s = sdk.SDK(
 
 
 req = operations.CreateContextRequestBody(
-    name="Edna Mante II",
+    name='Edna Mante II',
     owner=operations.CreateContextRequestBodyOwner2(
-        slug="sed",
-        type="organization",
+        slug='sed',
+        type=operations.CreateContextRequestBodyOwner2TypeEnum.ORGANIZATION,
     ),
 )
 
@@ -90,7 +90,7 @@ s = sdk.SDK(
 
 
 req = operations.DeleteContextRequest(
-    context_id="9396fea7-596e-4b10-baaa-2352c5955907",
+    context_id='9396fea7-596e-4b10-baaa-2352c5955907',
 )
 
 res = s.context.delete_context(req)
@@ -117,8 +117,8 @@ s = sdk.SDK(
 
 
 req = operations.DeleteEnvironmentVariableFromContextRequest(
-    context_id="aff1a3a2-fa94-4677-b925-1aa52c3f5ad0",
-    env_var_name="quasi",
+    context_id='aff1a3a2-fa94-4677-b925-1aa52c3f5ad0',
+    env_var_name='quasi',
 )
 
 res = s.context.delete_environment_variable_from_context(req)
@@ -145,7 +145,7 @@ s = sdk.SDK(
 
 
 req = operations.GetContextRequest(
-    context_id="9da1ffe7-8f09-47b0-874f-15471b5e6e13",
+    context_id='9da1ffe7-8f09-47b0-874f-15471b5e6e13',
 )
 
 res = s.context.get_context(req)
@@ -172,10 +172,10 @@ s = sdk.SDK(
 
 
 req = operations.ListContextsRequest(
-    owner_id="b99d488e-1e91-4e45-8ad2-abd44269802d",
-    owner_slug="ipsam",
-    owner_type="account",
-    page_token="fugit",
+    owner_id='b99d488e-1e91-4e45-8ad2-abd44269802d',
+    owner_slug='ipsam',
+    owner_type=operations.ListContextsOwnerTypeEnum.ACCOUNT,
+    page_token='fugit',
 )
 
 res = s.context.list_contexts(req)
@@ -202,8 +202,8 @@ s = sdk.SDK(
 
 
 req = operations.ListEnvironmentVariablesFromContextRequest(
-    context_id="a94bb4f6-3c96-49e9-a3ef-a77dfb14cd66",
-    page_token="laborum",
+    context_id='a94bb4f6-3c96-49e9-a3ef-a77dfb14cd66',
+    page_token='laborum',
 )
 
 res = s.context.list_environment_variables_from_context(req)

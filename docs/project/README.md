@@ -31,9 +31,9 @@ s = sdk.SDK(
 
 req = operations.CreateCheckoutKeyRequest(
     request_body=operations.CreateCheckoutKeyCheckoutKeyInput(
-        type="deploy-key",
+        type=operations.CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputTypeEnum.DEPLOY_KEY,
     ),
-    project_slug="distinctio",
+    project_slug='distinctio',
 )
 
 res = s.project.create_checkout_key(req)
@@ -61,10 +61,10 @@ s = sdk.SDK(
 
 req = operations.CreateEnvVarRequest(
     request_body=operations.CreateEnvVarEnvironmentVariablePair(
-        name="foo",
-        value="xxxx1234",
+        name='foo',
+        value='xxxx1234',
     ),
-    project_slug="asperiores",
+    project_slug='asperiores',
 )
 
 res = s.project.create_env_var(req)
@@ -91,8 +91,8 @@ s = sdk.SDK(
 
 
 req = operations.DeleteCheckoutKeyRequest(
-    fingerprint="nihil",
-    project_slug="ipsum",
+    fingerprint='nihil',
+    project_slug='ipsum',
 )
 
 res = s.project.delete_checkout_key(req)
@@ -119,8 +119,8 @@ s = sdk.SDK(
 
 
 req = operations.DeleteEnvVarRequest(
-    name="Alberta Ullrich",
-    project_slug="perferendis",
+    name='Alberta Ullrich',
+    project_slug='perferendis',
 )
 
 res = s.project.delete_env_var(req)
@@ -147,8 +147,8 @@ s = sdk.SDK(
 
 
 req = operations.GetCheckoutKeyRequest(
-    fingerprint="amet",
-    project_slug="optio",
+    fingerprint='amet',
+    project_slug='optio',
 )
 
 res = s.project.get_checkout_key(req)
@@ -175,8 +175,8 @@ s = sdk.SDK(
 
 
 req = operations.GetEnvVarRequest(
-    name="Tommy Turner",
-    project_slug="provident",
+    name='Tommy Turner',
+    project_slug='provident',
 )
 
 res = s.project.get_env_var(req)
@@ -203,7 +203,7 @@ s = sdk.SDK(
 
 
 req = operations.GetProjectBySlugRequest(
-    project_slug="minima",
+    project_slug='minima',
 )
 
 res = s.project.get_project_by_slug(req)
@@ -230,7 +230,7 @@ s = sdk.SDK(
 
 
 req = operations.ListCheckoutKeysRequest(
-    project_slug="repellendus",
+    project_slug='repellendus',
 )
 
 res = s.project.list_checkout_keys(req)
@@ -257,7 +257,7 @@ s = sdk.SDK(
 
 
 req = operations.ListEnvVarsRequest(
-    project_slug="totam",
+    project_slug='totam',
 )
 
 res = s.project.list_env_vars(req)
