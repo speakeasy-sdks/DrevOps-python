@@ -9,7 +9,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.AddEnvironmentVariableToContextRequest(
     request_body=operations.AddEnvironmentVariableToContextRequestBody(
         value='some-secret-value',

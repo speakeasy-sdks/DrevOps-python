@@ -21,6 +21,7 @@ class User:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_collaborations(self) -> operations.GetCollaborationsResponse:
         r"""Collaborations
         Provides the set of organizations of which a user is a member or a collaborator.
@@ -54,6 +55,7 @@ class User:
 
         return res
 
+    
     def get_current_user(self) -> operations.GetCurrentUserResponse:
         r"""User Information
         Provides information about the user that is currently signed in.
@@ -81,6 +83,7 @@ class User:
 
         return res
 
+    
     def get_user(self, request: operations.GetUserRequest) -> operations.GetUserResponse:
         r"""User Information
         Provides information about the user with the given ID.

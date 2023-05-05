@@ -24,7 +24,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ApprovePendingApprovalJobByIDRequest(
     approval_request_id='a19f1d17-0513-439d-8808-6a1840394c26',
     id='071f93f5-f064-42da-87af-515cc413aa63',
@@ -52,7 +51,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.CancelWorkflowRequest(
     id='aae8d678-64db-4b67-9fd5-e60b375ed4f6',
 )
@@ -78,7 +76,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetWorkflowByIDRequest(
     id='fbee41f3-3317-4fe3-9b60-eb1ea426555b',
@@ -106,7 +103,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ListWorkflowJobsRequest(
     id='a3c28744-ed53-4b88-b3a8-d8f5c0b2f2fb',
 )
@@ -132,7 +128,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.RerunWorkflowRequest(
     request_body=operations.RerunWorkflowRerunWorkflowParameters(

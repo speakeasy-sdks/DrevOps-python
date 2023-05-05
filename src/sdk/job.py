@@ -21,6 +21,7 @@ class Job:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def cancel_job(self, request: operations.CancelJobRequest) -> operations.CancelJobResponse:
         r"""Cancel job
         Cancel job with a given job number.
@@ -48,6 +49,7 @@ class Job:
 
         return res
 
+    
     def get_job_artifacts(self, request: operations.GetJobArtifactsRequest) -> operations.GetJobArtifactsResponse:
         r"""Get a job's artifacts
         Returns a job's artifacts.
@@ -75,6 +77,7 @@ class Job:
 
         return res
 
+    
     def get_job_details(self, request: operations.GetJobDetailsRequest) -> operations.GetJobDetailsResponse:
         r"""Get job details
         Returns job details.
@@ -102,6 +105,7 @@ class Job:
 
         return res
 
+    
     def get_tests(self, request: operations.GetTestsRequest) -> operations.GetTestsResponse:
         r"""Get test metadata
         Get test metadata for a build. In the rare case where there is more than 250MB of test data on the job, no results will be returned.

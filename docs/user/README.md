@@ -74,7 +74,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetUserRequest(
     id='ce6c5561-46c3-4e25-8fb0-08c42e141aac',
 )

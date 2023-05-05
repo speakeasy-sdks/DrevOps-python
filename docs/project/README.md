@@ -28,7 +28,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.CreateCheckoutKeyRequest(
     request_body=operations.CreateCheckoutKeyCheckoutKeyInput(
         type=operations.CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputTypeEnum.DEPLOY_KEY,
@@ -57,7 +56,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.CreateEnvVarRequest(
     request_body=operations.CreateEnvVarEnvironmentVariablePair(
@@ -89,7 +87,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.DeleteCheckoutKeyRequest(
     fingerprint='nihil',
     project_slug='ipsum',
@@ -116,7 +113,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.DeleteEnvVarRequest(
     name='Alberta Ullrich',
@@ -145,7 +141,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetCheckoutKeyRequest(
     fingerprint='amet',
     project_slug='optio',
@@ -172,7 +167,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetEnvVarRequest(
     name='Tommy Turner',
@@ -201,7 +195,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetProjectBySlugRequest(
     project_slug='minima',
 )
@@ -228,7 +221,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ListCheckoutKeysRequest(
     project_slug='repellendus',
 )
@@ -254,7 +246,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.ListEnvVarsRequest(
     project_slug='totam',

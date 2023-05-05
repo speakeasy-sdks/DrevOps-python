@@ -21,6 +21,7 @@ class Schedule:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_schedule(self, request: operations.CreateScheduleRequest) -> operations.CreateScheduleResponse:
         r"""Create a schedule
         Creates a schedule and returns the created schedule.
@@ -52,6 +53,7 @@ class Schedule:
 
         return res
 
+    
     def delete_schedule_by_id(self, request: operations.DeleteScheduleByIDRequest) -> operations.DeleteScheduleByIDResponse:
         r"""Delete a schedule
         Deletes the schedule by id.
@@ -79,6 +81,7 @@ class Schedule:
 
         return res
 
+    
     def get_schedule_by_id(self, request: operations.GetScheduleByIDRequest) -> operations.GetScheduleByIDResponse:
         r"""Get a schedule
         Get a schedule by id.
@@ -106,6 +109,7 @@ class Schedule:
 
         return res
 
+    
     def list_schedules_for_project(self, request: operations.ListSchedulesForProjectRequest) -> operations.ListSchedulesForProjectResponse:
         r"""Get all schedules
         Returns all schedules for this project.
@@ -134,6 +138,7 @@ class Schedule:
 
         return res
 
+    
     def update_schedule(self, request: operations.UpdateScheduleRequest) -> operations.UpdateScheduleResponse:
         r"""Update a schedule
         Updates a schedule and returns the updated schedule.

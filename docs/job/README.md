@@ -23,7 +23,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.CancelJobRequest(
     job_number='nihil',
     project_slug='repellat',
@@ -50,7 +49,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetJobArtifactsRequest(
     job_number='quibusdam',
@@ -79,7 +77,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetJobDetailsRequest(
     job_number='saepe',
     project_slug='pariatur',
@@ -106,7 +103,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetTestsRequest(
     job_number='accusantium',

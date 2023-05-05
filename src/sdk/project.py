@@ -21,6 +21,7 @@ class Project:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_checkout_key(self, request: operations.CreateCheckoutKeyRequest) -> operations.CreateCheckoutKeyResponse:
         r"""Create a new checkout key
         Creates a new checkout key. This API request is only usable with a user API token.
@@ -52,6 +53,7 @@ class Project:
 
         return res
 
+    
     def create_env_var(self, request: operations.CreateEnvVarRequest) -> operations.CreateEnvVarResponse:
         r"""Create an environment variable
         Creates a new environment variable.
@@ -83,6 +85,7 @@ class Project:
 
         return res
 
+    
     def delete_checkout_key(self, request: operations.DeleteCheckoutKeyRequest) -> operations.DeleteCheckoutKeyResponse:
         r"""Delete a checkout key
         Deletes the checkout key.
@@ -110,6 +113,7 @@ class Project:
 
         return res
 
+    
     def delete_env_var(self, request: operations.DeleteEnvVarRequest) -> operations.DeleteEnvVarResponse:
         r"""Delete an environment variable
         Deletes the environment variable named :name.
@@ -137,6 +141,7 @@ class Project:
 
         return res
 
+    
     def get_checkout_key(self, request: operations.GetCheckoutKeyRequest) -> operations.GetCheckoutKeyResponse:
         r"""Get a checkout key
         Returns an individual checkout key.
@@ -164,6 +169,7 @@ class Project:
 
         return res
 
+    
     def get_env_var(self, request: operations.GetEnvVarRequest) -> operations.GetEnvVarResponse:
         r"""Get a masked environment variable
         Returns the masked value of environment variable :name.
@@ -191,6 +197,7 @@ class Project:
 
         return res
 
+    
     def get_project_by_slug(self, request: operations.GetProjectBySlugRequest) -> operations.GetProjectBySlugResponse:
         r"""Get a project
         Retrieves a project by project slug.
@@ -218,6 +225,7 @@ class Project:
 
         return res
 
+    
     def list_checkout_keys(self, request: operations.ListCheckoutKeysRequest) -> operations.ListCheckoutKeysResponse:
         r"""Get all checkout keys
         Returns a sequence of checkout keys for `:project`.
@@ -245,6 +253,7 @@ class Project:
 
         return res
 
+    
     def list_env_vars(self, request: operations.ListEnvVarsRequest) -> operations.ListEnvVarsResponse:
         r"""List all environment variables
         Returns four 'x' characters, in addition to the last four ASCII characters of the value, consistent with the display of environment variable values on the CircleCI website.

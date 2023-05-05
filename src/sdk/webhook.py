@@ -21,6 +21,7 @@ class Webhook:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_webhook(self, request: operations.CreateWebhookRequestBody) -> operations.CreateWebhookResponse:
         r"""Create a webhook"""
         base_url = self._server_url
@@ -50,6 +51,7 @@ class Webhook:
 
         return res
 
+    
     def delete_webhook(self, request: operations.DeleteWebhookRequest) -> operations.DeleteWebhookResponse:
         r"""Delete a webhook"""
         base_url = self._server_url
@@ -75,6 +77,7 @@ class Webhook:
 
         return res
 
+    
     def get_webhook_by_id(self, request: operations.GetWebhookByIDRequest) -> operations.GetWebhookByIDResponse:
         r"""Get a webhook
         Get a webhook by id.
@@ -102,6 +105,7 @@ class Webhook:
 
         return res
 
+    
     def get_webhooks(self, request: operations.GetWebhooksRequest) -> operations.GetWebhooksResponse:
         r"""List webhooks
         Get a list of webhook that match the given scope-type and scope-id
@@ -130,6 +134,7 @@ class Webhook:
 
         return res
 
+    
     def update_webhook(self, request: operations.UpdateWebhookRequest) -> operations.UpdateWebhookResponse:
         r"""Update a webhook"""
         base_url = self._server_url

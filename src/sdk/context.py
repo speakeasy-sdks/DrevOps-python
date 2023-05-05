@@ -21,6 +21,7 @@ class Context:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_environment_variable_to_context(self, request: operations.AddEnvironmentVariableToContextRequest) -> operations.AddEnvironmentVariableToContextResponse:
         r"""Add or update an environment variable
         Create or update an environment variable within a context. Returns information about the environment variable, not including its value.
@@ -52,6 +53,7 @@ class Context:
 
         return res
 
+    
     def create_context(self, request: operations.CreateContextRequestBody) -> operations.CreateContextResponse:
         r"""Create a new context"""
         base_url = self._server_url
@@ -81,6 +83,7 @@ class Context:
 
         return res
 
+    
     def delete_context(self, request: operations.DeleteContextRequest) -> operations.DeleteContextResponse:
         r"""Delete a context"""
         base_url = self._server_url
@@ -106,6 +109,7 @@ class Context:
 
         return res
 
+    
     def delete_environment_variable_from_context(self, request: operations.DeleteEnvironmentVariableFromContextRequest) -> operations.DeleteEnvironmentVariableFromContextResponse:
         r"""Remove an environment variable
         Delete an environment variable from a context.
@@ -133,6 +137,7 @@ class Context:
 
         return res
 
+    
     def get_context(self, request: operations.GetContextRequest) -> operations.GetContextResponse:
         r"""Get a context
         Returns basic information about a context.
@@ -160,6 +165,7 @@ class Context:
 
         return res
 
+    
     def list_contexts(self, request: operations.ListContextsRequest) -> operations.ListContextsResponse:
         r"""List contexts
         List all contexts for an owner.
@@ -188,6 +194,7 @@ class Context:
 
         return res
 
+    
     def list_environment_variables_from_context(self, request: operations.ListEnvironmentVariablesFromContextRequest) -> operations.ListEnvironmentVariablesFromContextResponse:
         r"""List environment variables
         List information about environment variables in a context, not including their values.

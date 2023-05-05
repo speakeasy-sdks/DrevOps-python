@@ -21,6 +21,7 @@ class Workflow:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def approve_pending_approval_job_by_id(self, request: operations.ApprovePendingApprovalJobByIDRequest) -> operations.ApprovePendingApprovalJobByIDResponse:
         r"""Approve a job
         Approves a pending approval job in a workflow.
@@ -48,6 +49,7 @@ class Workflow:
 
         return res
 
+    
     def cancel_workflow(self, request: operations.CancelWorkflowRequest) -> operations.CancelWorkflowResponse:
         r"""Cancel a workflow
         Cancels a running workflow.
@@ -75,6 +77,7 @@ class Workflow:
 
         return res
 
+    
     def get_workflow_by_id(self, request: operations.GetWorkflowByIDRequest) -> operations.GetWorkflowByIDResponse:
         r"""Get a workflow
         Returns summary fields of a workflow by ID.
@@ -102,6 +105,7 @@ class Workflow:
 
         return res
 
+    
     def list_workflow_jobs(self, request: operations.ListWorkflowJobsRequest) -> operations.ListWorkflowJobsResponse:
         r"""Get a workflow's jobs
         Returns a sequence of jobs for a workflow.
@@ -129,6 +133,7 @@ class Workflow:
 
         return res
 
+    
     def rerun_workflow(self, request: operations.RerunWorkflowRequest) -> operations.RerunWorkflowResponse:
         r"""Rerun a workflow
         Reruns a workflow.

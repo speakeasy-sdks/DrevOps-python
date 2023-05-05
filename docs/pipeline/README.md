@@ -28,7 +28,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ContinuePipelineRequestBody(
     configuration='praesentium',
     continuation_key='natus',
@@ -59,7 +58,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetPipelineByIDRequest(
     pipeline_id='ddc69260-1fb5-476b-8d5f-0d30c5fbb258',
 )
@@ -85,7 +83,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetPipelineByNumberRequest(
     pipeline_number='dignissimos',
@@ -114,7 +111,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetPipelineConfigByIDRequest(
     pipeline_id='53202c73-d5fe-49b9-8c28-909b3fe49a8d',
 )
@@ -140,7 +136,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.ListMyPipelinesRequest(
     page_token='provident',
@@ -168,7 +163,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.ListPipelinesRequest(
     mine=False,
@@ -198,7 +192,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ListPipelinesForProjectRequest(
     branch='quaerat',
     page_token='quos',
@@ -227,7 +220,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ListWorkflowsByPipelineIDRequest(
     page_token='dolorem',
     pipeline_id='3323f9b7-7f3a-4410-8674-ebf69280d1ba',
@@ -254,7 +246,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.TriggerPipelineRequest(
     request_body=operations.TriggerPipelineTriggerPipelineParameters(

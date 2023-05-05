@@ -24,7 +24,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.CreateWebhookRequestBody(
     events=[
         operations.CreateWebhookRequestBodyEventsEnum.WORKFLOW_COMPLETED,
@@ -61,7 +60,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.DeleteWebhookRequest(
     webhook_id='ca425190-4e52-43c7-a0bc-7178e4796f2a',
 )
@@ -87,7 +85,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetWebhookByIDRequest(
     webhook_id='70c68828-2aa4-4825-a2f2-22e9817ee17c',
@@ -115,7 +112,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetWebhooksRequest(
     scope_id='be61e6b7-b95b-4c0a-b3c2-0c4f3789fd87',
     scope_type=operations.GetWebhooksScopeTypeEnum.PROJECT,
@@ -142,7 +138,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.UpdateWebhookRequest(
     request_body=operations.UpdateWebhookRequestBody(

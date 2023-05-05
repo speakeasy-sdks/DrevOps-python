@@ -21,6 +21,7 @@ class Pipeline:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def continue_pipeline(self, request: operations.ContinuePipelineRequestBody) -> operations.ContinuePipelineResponse:
         r"""Continue a pipeline
         Continue a pipeline from the setup phase.
@@ -52,6 +53,7 @@ class Pipeline:
 
         return res
 
+    
     def get_pipeline_by_id(self, request: operations.GetPipelineByIDRequest) -> operations.GetPipelineByIDResponse:
         r"""Get a pipeline by ID
         Returns a pipeline by the pipeline ID.
@@ -79,6 +81,7 @@ class Pipeline:
 
         return res
 
+    
     def get_pipeline_by_number(self, request: operations.GetPipelineByNumberRequest) -> operations.GetPipelineByNumberResponse:
         r"""Get a pipeline by pipeline number
         Returns a pipeline by the pipeline number.
@@ -106,6 +109,7 @@ class Pipeline:
 
         return res
 
+    
     def get_pipeline_config_by_id(self, request: operations.GetPipelineConfigByIDRequest) -> operations.GetPipelineConfigByIDResponse:
         r"""Get a pipeline's configuration
         Returns a pipeline's configuration by ID.
@@ -133,6 +137,7 @@ class Pipeline:
 
         return res
 
+    
     def list_my_pipelines(self, request: operations.ListMyPipelinesRequest) -> operations.ListMyPipelinesResponse:
         r"""Get your pipelines
         Returns a sequence of all pipelines for this project triggered by the user.
@@ -161,6 +166,7 @@ class Pipeline:
 
         return res
 
+    
     def list_pipelines(self, request: operations.ListPipelinesRequest) -> operations.ListPipelinesResponse:
         r"""Get a list of pipelines
         Returns all pipelines for the most recently built projects (max 250) you follow in an organization.
@@ -189,6 +195,7 @@ class Pipeline:
 
         return res
 
+    
     def list_pipelines_for_project(self, request: operations.ListPipelinesForProjectRequest) -> operations.ListPipelinesForProjectResponse:
         r"""Get all pipelines
         Returns all pipelines for this project.
@@ -217,6 +224,7 @@ class Pipeline:
 
         return res
 
+    
     def list_workflows_by_pipeline_id(self, request: operations.ListWorkflowsByPipelineIDRequest) -> operations.ListWorkflowsByPipelineIDResponse:
         r"""Get a pipeline's workflows
         Returns a paginated list of workflows by pipeline ID.
@@ -245,6 +253,7 @@ class Pipeline:
 
         return res
 
+    
     def trigger_pipeline(self, request: operations.TriggerPipelineRequest) -> operations.TriggerPipelineResponse:
         r"""Trigger a new pipeline
         Triggers a new pipeline on the project.

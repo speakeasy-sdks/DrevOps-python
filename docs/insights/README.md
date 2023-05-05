@@ -29,7 +29,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetAllInsightsBranchesRequest(
     project_slug='accusamus',
     workflow_name='non',
@@ -58,7 +57,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetFlakyTestsRequest(
     project_slug='occaecati',
 )
@@ -85,7 +83,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetJobTimeseriesRequest(
     branch='enim',
@@ -118,7 +115,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetOrgSummaryDataRequest(
     org_slug='deleniti',
@@ -153,7 +149,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetProjectWorkflowJobMetricsRequest(
     all_branches=False,
     branch='magnam',
@@ -185,7 +180,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetProjectWorkflowMetricsRequest(
     all_branches=False,
     branch='suscipit',
@@ -216,7 +210,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetProjectWorkflowRunsRequest(
     all_branches=False,
@@ -250,7 +243,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetProjectWorkflowTestMetricsRequest(
     all_branches=False,
     branch='quos',
@@ -282,7 +274,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetProjectWorkflowsPageDataRequest(
     branches={
@@ -318,7 +309,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetWorkflowSummaryRequest(
     all_branches=False,

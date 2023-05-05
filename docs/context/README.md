@@ -26,7 +26,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.AddEnvironmentVariableToContextRequest(
     request_body=operations.AddEnvironmentVariableToContextRequestBody(
         value='some-secret-value',
@@ -56,7 +55,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.CreateContextRequestBody(
     name='Edna Mante II',
@@ -88,7 +86,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.DeleteContextRequest(
     context_id='9396fea7-596e-4b10-baaa-2352c5955907',
 )
@@ -114,7 +111,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.DeleteEnvironmentVariableFromContextRequest(
     context_id='aff1a3a2-fa94-4677-b925-1aa52c3f5ad0',
@@ -143,7 +139,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetContextRequest(
     context_id='9da1ffe7-8f09-47b0-874f-15471b5e6e13',
 )
@@ -169,7 +164,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.ListContextsRequest(
     owner_id='b99d488e-1e91-4e45-8ad2-abd44269802d',
@@ -199,7 +193,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.ListEnvironmentVariablesFromContextRequest(
     context_id='a94bb4f6-3c96-49e9-a3ef-a77dfb14cd66',

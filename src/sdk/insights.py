@@ -21,6 +21,7 @@ class Insights:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_all_insights_branches(self, request: operations.GetAllInsightsBranchesRequest) -> operations.GetAllInsightsBranchesResponse:
         r"""Get all branches for a project
         Get a list of all branches for a specified project. The list will only contain branches currently available within Insights. The maximum number of branches returned by this endpoint is 5,000.
@@ -49,6 +50,7 @@ class Insights:
 
         return res
 
+    
     def get_flaky_tests(self, request: operations.GetFlakyTestsRequest) -> operations.GetFlakyTestsResponse:
         r"""Get flaky tests for a project
         Get a list of flaky tests for a given project. Flaky tests are branch agnostic. 
@@ -77,6 +79,7 @@ class Insights:
 
         return res
 
+    
     def get_job_timeseries(self, request: operations.GetJobTimeseriesRequest) -> operations.GetJobTimeseriesResponse:
         r"""Job timeseries data
         Get timeseries data for all jobs within a workflow.
@@ -105,6 +108,7 @@ class Insights:
 
         return res
 
+    
     def get_org_summary_data(self, request: operations.GetOrgSummaryDataRequest) -> operations.GetOrgSummaryDataResponse:
         r"""Get summary metrics with trends for the entire org, and for each project.
         Gets aggregated summary metrics with trends for the entire org. 
@@ -134,6 +138,7 @@ class Insights:
 
         return res
 
+    
     def get_project_workflow_job_metrics(self, request: operations.GetProjectWorkflowJobMetricsRequest) -> operations.GetProjectWorkflowJobMetricsResponse:
         r"""Get summary metrics for a project workflow's jobs.
         Get summary metrics for a project workflow's jobs. Job runs going back at most 90 days are included in the aggregation window. Metrics are refreshed daily, and thus may not include executions from the last 24 hours. Please note that Insights is not a financial reporting tool and should not be used for precise credit reporting.  Credit reporting from Insights does not use the same source of truth as the billing information that is found in the Plan Overview page in the CircleCI UI, nor does the underlying data have the same data accuracy guarantees as the billing information in the CircleCI UI.  This may lead to discrepancies between credits reported from Insights and the billing information in the Plan Overview page of the CircleCI UI.  For precise credit reporting, always use the Plan Overview page in the CircleCI UI.
@@ -162,6 +167,7 @@ class Insights:
 
         return res
 
+    
     def get_project_workflow_metrics(self, request: operations.GetProjectWorkflowMetricsRequest) -> operations.GetProjectWorkflowMetricsResponse:
         r"""Get summary metrics for a project's workflows
         Get summary metrics for a project's workflows.  Workflow runs going back at most 90 days are included in the aggregation window. Metrics are refreshed daily, and thus may not include executions from the last 24 hours.  Please note that Insights is not a financial reporting tool and should not be used for precise credit reporting.  Credit reporting from Insights does not use the same source of truth as the billing information that is found in the Plan Overview page in the CircleCI UI, nor does the underlying data have the same data accuracy guarantees as the billing information in the CircleCI UI.  This may lead to discrepancies between credits reported from Insights and the billing information in the Plan Overview page of the CircleCI UI.  For precise credit reporting, always use the Plan Overview page in the CircleCI UI.
@@ -190,6 +196,7 @@ class Insights:
 
         return res
 
+    
     def get_project_workflow_runs(self, request: operations.GetProjectWorkflowRunsRequest) -> operations.GetProjectWorkflowRunsResponse:
         r"""Get recent runs of a workflow
         Get recent runs of a workflow. Runs going back at most 90 days are returned. Please note that Insights is not a financial reporting tool and should not be used for precise credit reporting.  Credit reporting from Insights does not use the same source of truth as the billing information that is found in the Plan Overview page in the CircleCI UI, nor does the underlying data have the same data accuracy guarantees as the billing information in the CircleCI UI.  This may lead to discrepancies between credits reported from Insights and the billing information in the Plan Overview page of the CircleCI UI.  For precise credit reporting, always use the Plan Overview page in the CircleCI UI.
@@ -218,6 +225,7 @@ class Insights:
 
         return res
 
+    
     def get_project_workflow_test_metrics(self, request: operations.GetProjectWorkflowTestMetricsRequest) -> operations.GetProjectWorkflowTestMetricsResponse:
         r"""Get test metrics for a project's workflows
         Get test metrics for a project's workflows. Currently tests metrics are calculated based on 10 most recent workflow runs.
@@ -246,6 +254,7 @@ class Insights:
 
         return res
 
+    
     def get_project_workflows_page_data(self, request: operations.GetProjectWorkflowsPageDataRequest) -> operations.GetProjectWorkflowsPageDataResponse:
         r"""Get summary metrics and trends for a project across it's workflows and branches
         Get summary metrics and trends for a project at workflow and branch level. 
@@ -277,6 +286,7 @@ class Insights:
 
         return res
 
+    
     def get_workflow_summary(self, request: operations.GetWorkflowSummaryRequest) -> operations.GetWorkflowSummaryResponse:
         r"""Get metrics and trends for workflows
         Get the metrics and trends for a particular workflow on a single branch or all branches

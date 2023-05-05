@@ -24,7 +24,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.CreateScheduleRequest(
     request_body=operations.CreateScheduleCreateScheduleParameters(
         attribution_actor=operations.CreateScheduleCreateScheduleParametersAttributionActorEnum.CURRENT,
@@ -83,7 +82,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.DeleteScheduleByIDRequest(
     schedule_id='5a73429c-db1a-4842-abb6-79d2322715bf',
 )
@@ -109,7 +107,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetScheduleByIDRequest(
     schedule_id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
@@ -137,7 +134,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ListSchedulesForProjectRequest(
     page_token='cupiditate',
     project_slug='qui',
@@ -164,7 +160,6 @@ s = sdk.SDK(
         api_key_header="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.UpdateScheduleRequest(
     request_body=operations.UpdateScheduleUpdateScheduleParameters(
