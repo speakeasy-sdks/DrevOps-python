@@ -29,11 +29,12 @@ class Job:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CancelJobRequest, base_url, '/project/{project-slug}/job/{job-number}/cancel', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.CancelJobResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -57,11 +58,12 @@ class Job:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetJobArtifactsRequest, base_url, '/project/{project-slug}/{job-number}/artifacts', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetJobArtifactsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -85,11 +87,12 @@ class Job:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetJobDetailsRequest, base_url, '/project/{project-slug}/job/{job-number}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetJobDetailsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -113,11 +116,12 @@ class Job:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetTestsRequest, base_url, '/project/{project-slug}/{job-number}/tests', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetTestsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

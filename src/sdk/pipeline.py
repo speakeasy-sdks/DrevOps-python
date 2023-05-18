@@ -29,11 +29,11 @@ class Pipeline:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/pipeline/continue'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -61,11 +61,12 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetPipelineByIDRequest, base_url, '/pipeline/{pipeline-id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPipelineByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -89,11 +90,12 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetPipelineByNumberRequest, base_url, '/project/{project-slug}/pipeline/{pipeline-number}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPipelineByNumberResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -117,11 +119,12 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetPipelineConfigByIDRequest, base_url, '/pipeline/{pipeline-id}/config', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPipelineConfigByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -145,12 +148,13 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListMyPipelinesRequest, base_url, '/project/{project-slug}/pipeline/mine', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListMyPipelinesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListMyPipelinesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -174,12 +178,13 @@ class Pipeline:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/pipeline'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListPipelinesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListPipelinesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -203,12 +208,13 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListPipelinesForProjectRequest, base_url, '/project/{project-slug}/pipeline', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListPipelinesForProjectRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListPipelinesForProjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -232,12 +238,13 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListWorkflowsByPipelineIDRequest, base_url, '/pipeline/{pipeline-id}/workflow', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListWorkflowsByPipelineIDRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListWorkflowsByPipelineIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -261,11 +268,11 @@ class Pipeline:
         base_url = self._server_url
         
         url = utils.generate_url(operations.TriggerPipelineRequest, base_url, '/project/{project-slug}/pipeline', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

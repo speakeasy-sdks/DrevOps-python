@@ -29,11 +29,12 @@ class Workflow:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ApprovePendingApprovalJobByIDRequest, base_url, '/workflow/{id}/approve/{approval_request_id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ApprovePendingApprovalJobByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -57,11 +58,12 @@ class Workflow:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CancelWorkflowRequest, base_url, '/workflow/{id}/cancel', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.CancelWorkflowResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -85,11 +87,12 @@ class Workflow:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetWorkflowByIDRequest, base_url, '/workflow/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetWorkflowByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -113,11 +116,12 @@ class Workflow:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ListWorkflowJobsRequest, base_url, '/workflow/{id}/job', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListWorkflowJobsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -141,11 +145,11 @@ class Workflow:
         base_url = self._server_url
         
         url = utils.generate_url(operations.RerunWorkflowRequest, base_url, '/workflow/{id}/rerun', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         

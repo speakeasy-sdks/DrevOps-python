@@ -29,12 +29,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetAllInsightsBranchesRequest, base_url, '/insights/{project-slug}/branches', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetAllInsightsBranchesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllInsightsBranchesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -59,11 +60,12 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetFlakyTestsRequest, base_url, '/insights/{project-slug}/flaky-tests', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetFlakyTestsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -87,12 +89,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetJobTimeseriesRequest, base_url, '/insights/time-series/{project-slug}/workflows/{workflow-name}/jobs', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetJobTimeseriesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetJobTimeseriesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -117,12 +120,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetOrgSummaryDataRequest, base_url, '/insights/{org-slug}/summary', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetOrgSummaryDataRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetOrgSummaryDataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -146,12 +150,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetProjectWorkflowJobMetricsRequest, base_url, '/insights/{project-slug}/workflows/{workflow-name}/jobs', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetProjectWorkflowJobMetricsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetProjectWorkflowJobMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -175,12 +180,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetProjectWorkflowMetricsRequest, base_url, '/insights/{project-slug}/workflows', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetProjectWorkflowMetricsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetProjectWorkflowMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -204,12 +210,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetProjectWorkflowRunsRequest, base_url, '/insights/{project-slug}/workflows/{workflow-name}', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetProjectWorkflowRunsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetProjectWorkflowRunsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -233,12 +240,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetProjectWorkflowTestMetricsRequest, base_url, '/insights/{project-slug}/workflows/{workflow-name}/test-metrics', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetProjectWorkflowTestMetricsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetProjectWorkflowTestMetricsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -265,12 +273,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetProjectWorkflowsPageDataRequest, base_url, '/insights/pages/{project-slug}/summary', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetProjectWorkflowsPageDataRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetProjectWorkflowsPageDataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -294,12 +303,13 @@ class Insights:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetWorkflowSummaryRequest, base_url, '/insights/{project-slug}/workflows/{workflow-name}/summary', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetWorkflowSummaryRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetWorkflowSummaryResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

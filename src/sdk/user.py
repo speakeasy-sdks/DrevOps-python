@@ -35,11 +35,12 @@ class User:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/me/collaborations'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetCollaborationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -63,11 +64,12 @@ class User:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/me'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetCurrentUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -91,11 +93,12 @@ class User:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetUserRequest, base_url, '/user/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
