@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class GetJobTimeseriesGranularityEnum(str, Enum):
+class GetJobTimeseriesGranularity(str, Enum):
     r"""The granularity for which to query timeseries data."""
     DAILY = 'daily'
     HOURLY = 'hourly'
@@ -28,7 +28,7 @@ class GetJobTimeseriesRequest:
     r"""The name of a vcs branch. If not passed we will scope the API call to the default branch."""
     end_date: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'end-date', 'style': 'form', 'explode': True }})
     r"""Include only executions that started before this date. This date can be at most 90 days after the start-date."""
-    granularity: Optional[GetJobTimeseriesGranularityEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'granularity', 'style': 'form', 'explode': True }})
+    granularity: Optional[GetJobTimeseriesGranularity] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'granularity', 'style': 'form', 'explode': True }})
     r"""The granularity for which to query timeseries data."""
     start_date: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start-date', 'style': 'form', 'explode': True }})
     r"""Include only executions that started at or after this date. This must be specified if an end-date is provided."""

@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputTypeEnum(str, Enum):
+class CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputType(str, Enum):
     r"""The type of checkout key to create. This may be either `deploy-key` or `user-key`."""
     USER_KEY = 'user-key'
     DEPLOY_KEY = 'deploy-key'
@@ -21,7 +21,7 @@ class CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputTypeEnum(str, Enum):
 @dataclasses.dataclass
 class CreateCheckoutKeyCheckoutKeyInput:
     
-    type: CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of checkout key to create. This may be either `deploy-key` or `user-key`."""
     
 
@@ -40,7 +40,7 @@ class CreateCheckoutKeyDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class CreateCheckoutKeyCheckoutKeyCheckoutKeyTypeEnum(str, Enum):
+class CreateCheckoutKeyCheckoutKeyCheckoutKeyType(str, Enum):
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     DEPLOY_KEY = 'deploy-key'
     GITHUB_USER_KEY = 'github-user-key'
@@ -59,7 +59,7 @@ class CreateCheckoutKeyCheckoutKey:
     r"""A boolean value that indicates if this key is preferred."""
     public_key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('public-key') }})
     r"""A public SSH key."""
-    type: CreateCheckoutKeyCheckoutKeyCheckoutKeyTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: CreateCheckoutKeyCheckoutKeyCheckoutKeyType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     
 

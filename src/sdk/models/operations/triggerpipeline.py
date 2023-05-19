@@ -40,7 +40,7 @@ class TriggerPipelineDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class TriggerPipelinePipelineCreationStateEnum(str, Enum):
+class TriggerPipelinePipelineCreationState(str, Enum):
     r"""The current state of the pipeline."""
     CREATED = 'created'
     ERRORED = 'errored'
@@ -60,7 +60,7 @@ class TriggerPipelinePipelineCreation:
     r"""The unique ID of the pipeline."""
     number: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number') }})
     r"""The number of the pipeline."""
-    state: TriggerPipelinePipelineCreationStateEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
+    state: TriggerPipelinePipelineCreationState = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
     r"""The current state of the pipeline."""
     
 

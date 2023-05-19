@@ -115,7 +115,7 @@ class GetJobDetailsJobDetailsProject:
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
-class GetJobDetailsJobDetailsStatusEnum(str, Enum):
+class GetJobDetailsJobDetailsStatus(str, Enum):
     r"""The current status of the job."""
     SUCCESS = 'success'
     RUNNING = 'running'
@@ -168,7 +168,7 @@ class GetJobDetailsJobDetails:
     r"""The time when the job was placed in a queue."""
     started_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('started_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the job started."""
-    status: GetJobDetailsJobDetailsStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: GetJobDetailsJobDetailsStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""The current status of the job."""
     web_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('web_url') }})
     r"""URL of the job in CircleCI Web UI."""

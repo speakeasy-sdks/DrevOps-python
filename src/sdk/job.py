@@ -30,6 +30,7 @@ class Job:
         
         url = utils.generate_url(operations.CancelJobRequest, base_url, '/project/{project-slug}/job/{job-number}/cancel', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -59,6 +60,7 @@ class Job:
         
         url = utils.generate_url(operations.GetJobArtifactsRequest, base_url, '/project/{project-slug}/{job-number}/artifacts', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -88,6 +90,7 @@ class Job:
         
         url = utils.generate_url(operations.GetJobDetailsRequest, base_url, '/project/{project-slug}/job/{job-number}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -117,6 +120,7 @@ class Job:
         
         url = utils.generate_url(operations.GetTestsRequest, base_url, '/project/{project-slug}/{job-number}/tests', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

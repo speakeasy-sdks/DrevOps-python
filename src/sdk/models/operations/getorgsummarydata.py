@@ -8,7 +8,7 @@ from enum import Enum
 from sdk import utils
 from typing import Any, Optional
 
-class GetOrgSummaryDataReportingWindowEnum(str, Enum):
+class GetOrgSummaryDataReportingWindow(str, Enum):
     r"""The time window used to calculate summary metrics."""
     LAST_7_DAYS = 'last-7-days'
     LAST_90_DAYS = 'last-90-days'
@@ -24,7 +24,7 @@ class GetOrgSummaryDataRequest:
     r"""Org slug in the form `vcs-slug/org-name`. The `/` characters may be URL-escaped."""
     project_names: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'project-names', 'style': 'form', 'explode': True }})
     r"""List of project names."""
-    reporting_window: Optional[GetOrgSummaryDataReportingWindowEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
+    reporting_window: Optional[GetOrgSummaryDataReportingWindow] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
     r"""The time window used to calculate summary metrics."""
     
 

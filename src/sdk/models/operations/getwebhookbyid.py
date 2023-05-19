@@ -26,7 +26,7 @@ class GetWebhookByIDDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class GetWebhookByIDWebhookEventsEnum(str, Enum):
+class GetWebhookByIDWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
@@ -49,7 +49,7 @@ class GetWebhookByIDWebhook:
     
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
-    events: list[GetWebhookByIDWebhookEventsEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: list[GetWebhookByIDWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     r"""Events that will trigger the webhook"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the webhook"""

@@ -87,7 +87,7 @@ s = sdk.SDK(
 req = operations.GetJobTimeseriesRequest(
     branch='enim',
     end_date=dateutil.parser.isoparse('2020-02-08T20:51:42.354Z'),
-    granularity=operations.GetJobTimeseriesGranularityEnum.HOURLY,
+    granularity=operations.GetJobTimeseriesGranularity.HOURLY,
     project_slug='provident',
     start_date=dateutil.parser.isoparse('2021-09-06T10:36:33.442Z'),
     workflow_name='blanditiis',
@@ -124,7 +124,7 @@ req = operations.GetOrgSummaryDataRequest(
         "natus": 'omnis',
         "molestiae": 'perferendis',
     },
-    reporting_window=operations.GetOrgSummaryDataReportingWindowEnum.LAST_24_HOURS,
+    reporting_window=operations.GetOrgSummaryDataReportingWindow.LAST_24_HOURS,
 )
 
 res = s.insights.get_org_summary_data(req)
@@ -154,7 +154,7 @@ req = operations.GetProjectWorkflowJobMetricsRequest(
     branch='magnam',
     page_token='distinctio',
     project_slug='id',
-    reporting_window=operations.GetProjectWorkflowJobMetricsReportingWindowEnum.LAST_90_DAYS,
+    reporting_window=operations.GetProjectWorkflowJobMetricsReportingWindow.LAST_90_DAYS,
     workflow_name='labore',
 )
 
@@ -185,7 +185,7 @@ req = operations.GetProjectWorkflowMetricsRequest(
     branch='suscipit',
     page_token='natus',
     project_slug='nobis',
-    reporting_window=operations.GetProjectWorkflowMetricsReportingWindowEnum.LAST_24_HOURS,
+    reporting_window=operations.GetProjectWorkflowMetricsReportingWindow.LAST_24_HOURS,
 )
 
 res = s.insights.get_project_workflow_metrics(req)
@@ -282,7 +282,7 @@ req = operations.GetProjectWorkflowsPageDataRequest(
         "dolor": 'necessitatibus',
     },
     project_slug='odit',
-    reporting_window=operations.GetProjectWorkflowsPageDataReportingWindowEnum.LAST_90_DAYS,
+    reporting_window=operations.GetProjectWorkflowsPageDataReportingWindow.LAST_90_DAYS,
     workflow_names={
         "iure": 'doloribus',
     },

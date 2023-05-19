@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Any, Optional
 
-class CreateContextRequestBodyOwner2TypeEnum(str, Enum):
+class CreateContextRequestBodyOwner2Type(str, Enum):
     r"""The type of owner. Defaults to \\"organization\\". Accounts are only used as context owners in server and must be specified by an id instead of a slug."""
     ORGANIZATION = 'organization'
 
@@ -22,10 +22,10 @@ class CreateContextRequestBodyOwner2:
     
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""A string that represents an organization. Specify either this or id. Cannot be used for accounts."""
-    type: Optional[CreateContextRequestBodyOwner2TypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[CreateContextRequestBodyOwner2Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The type of owner. Defaults to \\"organization\\". Accounts are only used as context owners in server and must be specified by an id instead of a slug."""
     
-class CreateContextRequestBodyOwner1TypeEnum(str, Enum):
+class CreateContextRequestBodyOwner1Type(str, Enum):
     r"""The type of the owner. Defaults to \\"organization\\". Accounts are only used as context owners in server."""
     ACCOUNT = 'account'
     ORGANIZATION = 'organization'
@@ -37,7 +37,7 @@ class CreateContextRequestBodyOwner1:
     
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the owner of the context. Specify either this or slug."""
-    type: Optional[CreateContextRequestBodyOwner1TypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[CreateContextRequestBodyOwner1Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The type of the owner. Defaults to \\"organization\\". Accounts are only used as context owners in server."""
     
 

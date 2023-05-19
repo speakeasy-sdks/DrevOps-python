@@ -11,12 +11,12 @@ from marshmallow import fields
 from sdk import utils
 from typing import Any, Optional
 
-class UpdateScheduleUpdateScheduleParametersAttributionActorEnum(str, Enum):
+class UpdateScheduleUpdateScheduleParametersAttributionActor(str, Enum):
     r"""The attribution-actor of the scheduled pipeline."""
     CURRENT = 'current'
     SYSTEM = 'system'
 
-class UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum(str, Enum):
+class UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -26,7 +26,7 @@ class UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum(str, Enum):
     WED = 'WED'
     FRI = 'FRI'
 
-class UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum(str, Enum):
+class UpdateScheduleUpdateScheduleParametersTimetableMonths(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -49,11 +49,11 @@ class UpdateScheduleUpdateScheduleParametersTimetable:
     
     days_of_month: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month'), 'exclude': lambda f: f is None }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
-    days_of_week: Optional[list[UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
+    days_of_week: Optional[list[UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day'), 'exclude': lambda f: f is None }})
     r"""Hours in a day in which the schedule triggers."""
-    months: Optional[list[UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[UpdateScheduleUpdateScheduleParametersTimetableMonths]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     per_hour: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('per-hour'), 'exclude': lambda f: f is None }})
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
@@ -64,7 +64,7 @@ class UpdateScheduleUpdateScheduleParametersTimetable:
 class UpdateScheduleUpdateScheduleParameters:
     r"""The parameters for an update schedule request"""
     
-    attribution_actor: Optional[UpdateScheduleUpdateScheduleParametersAttributionActorEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribution-actor'), 'exclude': lambda f: f is None }})
+    attribution_actor: Optional[UpdateScheduleUpdateScheduleParametersAttributionActor] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribution-actor'), 'exclude': lambda f: f is None }})
     r"""The attribution-actor of the scheduled pipeline."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Description of the schedule."""
@@ -104,7 +104,7 @@ class UpdateScheduleScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
-class UpdateScheduleScheduleTimetable2DaysOfWeekEnum(str, Enum):
+class UpdateScheduleScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -114,7 +114,7 @@ class UpdateScheduleScheduleTimetable2DaysOfWeekEnum(str, Enum):
     WED = 'WED'
     FRI = 'FRI'
 
-class UpdateScheduleScheduleTimetable2MonthsEnum(str, Enum):
+class UpdateScheduleScheduleTimetable2Months(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -141,12 +141,12 @@ class UpdateScheduleScheduleTimetable2:
     r"""Hours in a day in which the schedule triggers."""
     per_hour: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('per-hour') }})
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
-    days_of_week: Optional[list[UpdateScheduleScheduleTimetable2DaysOfWeekEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
+    days_of_week: Optional[list[UpdateScheduleScheduleTimetable2DaysOfWeek]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
     r"""Days in a week in which the schedule triggers."""
-    months: Optional[list[UpdateScheduleScheduleTimetable2MonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[UpdateScheduleScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
-class UpdateScheduleScheduleTimetable1DaysOfWeekEnum(str, Enum):
+class UpdateScheduleScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -156,7 +156,7 @@ class UpdateScheduleScheduleTimetable1DaysOfWeekEnum(str, Enum):
     WED = 'WED'
     FRI = 'FRI'
 
-class UpdateScheduleScheduleTimetable1MonthsEnum(str, Enum):
+class UpdateScheduleScheduleTimetable1Months(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -177,7 +177,7 @@ class UpdateScheduleScheduleTimetable1MonthsEnum(str, Enum):
 class UpdateScheduleScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
     
-    days_of_week: list[UpdateScheduleScheduleTimetable1DaysOfWeekEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
+    days_of_week: list[UpdateScheduleScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
     r"""Hours in a day in which the schedule triggers."""
@@ -185,7 +185,7 @@ class UpdateScheduleScheduleTimetable1:
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
     days_of_month: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month'), 'exclude': lambda f: f is None }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
-    months: Optional[list[UpdateScheduleScheduleTimetable1MonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[UpdateScheduleScheduleTimetable1Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
 

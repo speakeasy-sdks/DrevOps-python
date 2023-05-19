@@ -26,7 +26,7 @@ s = sdk.SDK(
 
 req = operations.CreateScheduleRequest(
     request_body=operations.CreateScheduleCreateScheduleParameters(
-        attribution_actor=operations.CreateScheduleCreateScheduleParametersAttributionActorEnum.CURRENT,
+        attribution_actor=operations.CreateScheduleCreateScheduleParametersAttributionActor.CURRENT,
         description='similique',
         name='Cristina Hahn',
         parameters={
@@ -43,8 +43,8 @@ req = operations.CreateScheduleRequest(
                 253941,
             ],
             days_of_week=[
-                operations.CreateScheduleCreateScheduleParametersTimetable2DaysOfWeekEnum.SAT,
-                operations.CreateScheduleCreateScheduleParametersTimetable2DaysOfWeekEnum.FRI,
+                operations.CreateScheduleCreateScheduleParametersTimetable2DaysOfWeek.SAT,
+                operations.CreateScheduleCreateScheduleParametersTimetable2DaysOfWeek.FRI,
             ],
             hours_of_day=[
                 471752,
@@ -52,7 +52,7 @@ req = operations.CreateScheduleRequest(
                 711584,
             ],
             months=[
-                operations.CreateScheduleCreateScheduleParametersTimetable2MonthsEnum.NOV,
+                operations.CreateScheduleCreateScheduleParametersTimetable2Months.NOV,
             ],
             per_hour=424685,
         ),
@@ -163,7 +163,7 @@ s = sdk.SDK(
 
 req = operations.UpdateScheduleRequest(
     request_body=operations.UpdateScheduleUpdateScheduleParameters(
-        attribution_actor=operations.UpdateScheduleUpdateScheduleParametersAttributionActorEnum.CURRENT,
+        attribution_actor=operations.UpdateScheduleUpdateScheduleParametersAttributionActor.CURRENT,
         description='quae',
         name='Darren McClure',
         parameters={
@@ -178,20 +178,20 @@ req = operations.UpdateScheduleRequest(
                 715561,
             ],
             days_of_week=[
-                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.MON,
-                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.THU,
-                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.THU,
-                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeekEnum.FRI,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek.MON,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek.THU,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek.THU,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek.FRI,
             ],
             hours_of_day=[
                 293020,
                 844550,
             ],
             months=[
-                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.DEC,
-                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.APR,
-                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.AUG,
-                operations.UpdateScheduleUpdateScheduleParametersTimetableMonthsEnum.MAR,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonths.DEC,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonths.APR,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonths.AUG,
+                operations.UpdateScheduleUpdateScheduleParametersTimetableMonths.MAR,
             ],
             per_hour=974259,
         ),

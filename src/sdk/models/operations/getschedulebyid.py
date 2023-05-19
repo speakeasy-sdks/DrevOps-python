@@ -39,7 +39,7 @@ class GetScheduleByIDScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
-class GetScheduleByIDScheduleTimetable2DaysOfWeekEnum(str, Enum):
+class GetScheduleByIDScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -49,7 +49,7 @@ class GetScheduleByIDScheduleTimetable2DaysOfWeekEnum(str, Enum):
     WED = 'WED'
     FRI = 'FRI'
 
-class GetScheduleByIDScheduleTimetable2MonthsEnum(str, Enum):
+class GetScheduleByIDScheduleTimetable2Months(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -76,12 +76,12 @@ class GetScheduleByIDScheduleTimetable2:
     r"""Hours in a day in which the schedule triggers."""
     per_hour: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('per-hour') }})
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
-    days_of_week: Optional[list[GetScheduleByIDScheduleTimetable2DaysOfWeekEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
+    days_of_week: Optional[list[GetScheduleByIDScheduleTimetable2DaysOfWeek]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
     r"""Days in a week in which the schedule triggers."""
-    months: Optional[list[GetScheduleByIDScheduleTimetable2MonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[GetScheduleByIDScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
-class GetScheduleByIDScheduleTimetable1DaysOfWeekEnum(str, Enum):
+class GetScheduleByIDScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -91,7 +91,7 @@ class GetScheduleByIDScheduleTimetable1DaysOfWeekEnum(str, Enum):
     WED = 'WED'
     FRI = 'FRI'
 
-class GetScheduleByIDScheduleTimetable1MonthsEnum(str, Enum):
+class GetScheduleByIDScheduleTimetable1Months(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -112,7 +112,7 @@ class GetScheduleByIDScheduleTimetable1MonthsEnum(str, Enum):
 class GetScheduleByIDScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
     
-    days_of_week: list[GetScheduleByIDScheduleTimetable1DaysOfWeekEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
+    days_of_week: list[GetScheduleByIDScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
     r"""Hours in a day in which the schedule triggers."""
@@ -120,7 +120,7 @@ class GetScheduleByIDScheduleTimetable1:
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
     days_of_month: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month'), 'exclude': lambda f: f is None }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
-    months: Optional[list[GetScheduleByIDScheduleTimetable1MonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[GetScheduleByIDScheduleTimetable1Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
 

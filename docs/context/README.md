@@ -60,7 +60,7 @@ req = operations.CreateContextRequestBody(
     name='Edna Mante II',
     owner=operations.CreateContextRequestBodyOwner2(
         slug='sed',
-        type=operations.CreateContextRequestBodyOwner2TypeEnum.ORGANIZATION,
+        type=operations.CreateContextRequestBodyOwner2Type.ORGANIZATION,
     ),
 )
 
@@ -168,7 +168,7 @@ s = sdk.SDK(
 req = operations.ListContextsRequest(
     owner_id='b99d488e-1e91-4e45-8ad2-abd44269802d',
     owner_slug='ipsam',
-    owner_type=operations.ListContextsOwnerTypeEnum.ACCOUNT,
+    owner_type=operations.ListContextsOwnerType.ACCOUNT,
     page_token='fugit',
 )
 

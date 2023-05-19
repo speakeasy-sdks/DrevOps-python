@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class UpdateWebhookRequestBodyEventsEnum(str, Enum):
+class UpdateWebhookRequestBodyEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
@@ -21,7 +21,7 @@ class UpdateWebhookRequestBodyEventsEnum(str, Enum):
 class UpdateWebhookRequestBody:
     r"""The parameters for an update webhook request"""
     
-    events: Optional[list[UpdateWebhookRequestBodyEventsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events'), 'exclude': lambda f: f is None }})
+    events: Optional[list[UpdateWebhookRequestBodyEvents]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events'), 'exclude': lambda f: f is None }})
     r"""Events that will trigger the webhook"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""Name of the webhook"""
@@ -48,7 +48,7 @@ class UpdateWebhookDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class UpdateWebhookWebhookEventsEnum(str, Enum):
+class UpdateWebhookWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
@@ -71,7 +71,7 @@ class UpdateWebhookWebhook:
     
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
-    events: list[UpdateWebhookWebhookEventsEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: list[UpdateWebhookWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     r"""Events that will trigger the webhook"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the webhook"""

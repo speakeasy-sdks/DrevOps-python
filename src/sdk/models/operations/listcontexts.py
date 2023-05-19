@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class ListContextsOwnerTypeEnum(str, Enum):
+class ListContextsOwnerType(str, Enum):
     r"""The type of the owner. Defaults to \\"organization\\". Accounts are only used as context owners in server."""
     ACCOUNT = 'account'
     ORGANIZATION = 'organization'
@@ -24,7 +24,7 @@ class ListContextsRequest:
     r"""The unique ID of the owner of the context. Specify either this or owner-slug."""
     owner_slug: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'owner-slug', 'style': 'form', 'explode': True }})
     r"""A string that represents an organization. Specify either this or owner-id. Cannot be used for accounts."""
-    owner_type: Optional[ListContextsOwnerTypeEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'owner-type', 'style': 'form', 'explode': True }})
+    owner_type: Optional[ListContextsOwnerType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'owner-type', 'style': 'form', 'explode': True }})
     r"""The type of the owner. Defaults to \\"organization\\". Accounts are only used as context owners in server."""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page-token', 'style': 'form', 'explode': True }})
     r"""A token to retrieve the next page of results."""

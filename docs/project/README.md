@@ -30,7 +30,7 @@ s = sdk.SDK(
 
 req = operations.CreateCheckoutKeyRequest(
     request_body=operations.CreateCheckoutKeyCheckoutKeyInput(
-        type=operations.CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputTypeEnum.DEPLOY_KEY,
+        type=operations.CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputType.DEPLOY_KEY,
     ),
     project_slug='distinctio',
 )

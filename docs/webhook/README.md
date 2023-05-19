@@ -26,12 +26,12 @@ s = sdk.SDK(
 
 req = operations.CreateWebhookRequestBody(
     events=[
-        operations.CreateWebhookRequestBodyEventsEnum.WORKFLOW_COMPLETED,
+        operations.CreateWebhookRequestBodyEvents.WORKFLOW_COMPLETED,
     ],
     name='Vicky Lynch',
     scope=operations.CreateWebhookRequestBodyScope(
         id='6b144290-7474-4778-a7bd-466d28c10ab3',
-        type=operations.CreateWebhookRequestBodyScopeTypeEnum.PROJECT,
+        type=operations.CreateWebhookRequestBodyScopeType.PROJECT,
     ),
     signing_secret='quo',
     url='illum',
@@ -114,7 +114,7 @@ s = sdk.SDK(
 
 req = operations.GetWebhooksRequest(
     scope_id='be61e6b7-b95b-4c0a-b3c2-0c4f3789fd87',
-    scope_type=operations.GetWebhooksScopeTypeEnum.PROJECT,
+    scope_type=operations.GetWebhooksScopeType.PROJECT,
 )
 
 res = s.webhook.get_webhooks(req)
@@ -142,7 +142,7 @@ s = sdk.SDK(
 req = operations.UpdateWebhookRequest(
     request_body=operations.UpdateWebhookRequestBody(
         events=[
-            operations.UpdateWebhookRequestBodyEventsEnum.JOB_COMPLETED,
+            operations.UpdateWebhookRequestBodyEvents.JOB_COMPLETED,
         ],
         name='Kirk Stracke',
         signing_secret='eveniet',

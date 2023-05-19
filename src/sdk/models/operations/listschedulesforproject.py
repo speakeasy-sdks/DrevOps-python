@@ -41,7 +41,7 @@ class ListSchedulesForProject200ApplicationJSONScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
-class ListSchedulesForProject200ApplicationJSONScheduleTimetable2DaysOfWeekEnum(str, Enum):
+class ListSchedulesForProject200ApplicationJSONScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -51,7 +51,7 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable2DaysOfWeekEnum(
     WED = 'WED'
     FRI = 'FRI'
 
-class ListSchedulesForProject200ApplicationJSONScheduleTimetable2MonthsEnum(str, Enum):
+class ListSchedulesForProject200ApplicationJSONScheduleTimetable2Months(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -78,12 +78,12 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable2:
     r"""Hours in a day in which the schedule triggers."""
     per_hour: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('per-hour') }})
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
-    days_of_week: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable2DaysOfWeekEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
+    days_of_week: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable2DaysOfWeek]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
     r"""Days in a week in which the schedule triggers."""
-    months: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable2MonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
-class ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeekEnum(str, Enum):
+class ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
     SAT = 'SAT'
@@ -93,7 +93,7 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeekEnum(
     WED = 'WED'
     FRI = 'FRI'
 
-class ListSchedulesForProject200ApplicationJSONScheduleTimetable1MonthsEnum(str, Enum):
+class ListSchedulesForProject200ApplicationJSONScheduleTimetable1Months(str, Enum):
     r"""Month, in three letters format."""
     MAR = 'MAR'
     NOV = 'NOV'
@@ -114,7 +114,7 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable1MonthsEnum(str,
 class ListSchedulesForProject200ApplicationJSONScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
     
-    days_of_week: list[ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeekEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
+    days_of_week: list[ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
     r"""Hours in a day in which the schedule triggers."""
@@ -122,7 +122,7 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable1:
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
     days_of_month: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month'), 'exclude': lambda f: f is None }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
-    months: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable1MonthsEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
+    months: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable1Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
 

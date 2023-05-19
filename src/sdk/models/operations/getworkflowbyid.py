@@ -26,7 +26,7 @@ class GetWorkflowByIDDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class GetWorkflowByIDWorkflowStatusEnum(str, Enum):
+class GetWorkflowByIDWorkflowStatus(str, Enum):
     r"""The current status of the workflow."""
     SUCCESS = 'success'
     RUNNING = 'running'
@@ -38,7 +38,7 @@ class GetWorkflowByIDWorkflowStatusEnum(str, Enum):
     CANCELED = 'canceled'
     UNAUTHORIZED = 'unauthorized'
 
-class GetWorkflowByIDWorkflowTagEnum(str, Enum):
+class GetWorkflowByIDWorkflowTag(str, Enum):
     r"""Tag used for the workflow"""
     SETUP = 'setup'
 
@@ -61,13 +61,13 @@ class GetWorkflowByIDWorkflow:
     project_slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('project_slug') }})
     r"""The project-slug for the pipeline this workflow belongs to."""
     started_by: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('started_by') }})
-    status: GetWorkflowByIDWorkflowStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: GetWorkflowByIDWorkflowStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""The current status of the workflow."""
     stopped_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stopped_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the workflow stopped."""
     canceled_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canceled_by'), 'exclude': lambda f: f is None }})
     errored_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errored_by'), 'exclude': lambda f: f is None }})
-    tag: Optional[GetWorkflowByIDWorkflowTagEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
+    tag: Optional[GetWorkflowByIDWorkflowTag] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
     r"""Tag used for the workflow"""
     
 

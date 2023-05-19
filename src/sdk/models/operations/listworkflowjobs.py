@@ -26,7 +26,7 @@ class ListWorkflowJobsDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class ListWorkflowJobsWorkflowJobListResponseJobStatusEnum(str, Enum):
+class ListWorkflowJobsWorkflowJobListResponseJobStatus(str, Enum):
     r"""The current status of the job."""
     SUCCESS = 'success'
     RUNNING = 'running'
@@ -43,7 +43,7 @@ class ListWorkflowJobsWorkflowJobListResponseJobStatusEnum(str, Enum):
     CANCELED = 'canceled'
     UNAUTHORIZED = 'unauthorized'
 
-class ListWorkflowJobsWorkflowJobListResponseJobTypeEnum(str, Enum):
+class ListWorkflowJobsWorkflowJobListResponseJobType(str, Enum):
     r"""The type of job."""
     BUILD = 'build'
     APPROVAL = 'approval'
@@ -64,9 +64,9 @@ class ListWorkflowJobsWorkflowJobListResponseJob:
     r"""The project-slug for the job."""
     started_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('started_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the job started."""
-    status: ListWorkflowJobsWorkflowJobListResponseJobStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: ListWorkflowJobsWorkflowJobListResponseJobStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""The current status of the job."""
-    type: ListWorkflowJobsWorkflowJobListResponseJobTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: ListWorkflowJobsWorkflowJobListResponseJobType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of job."""
     approval_request_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('approval_request_id'), 'exclude': lambda f: f is None }})
     r"""The unique ID of the job."""

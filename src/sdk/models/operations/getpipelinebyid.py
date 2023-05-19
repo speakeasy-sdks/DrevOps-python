@@ -26,7 +26,7 @@ class GetPipelineByIDDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class GetPipelineByIDPipelineErrorsTypeEnum(str, Enum):
+class GetPipelineByIDPipelineErrorsType(str, Enum):
     r"""The type of error."""
     CONFIG = 'config'
     CONFIG_FETCH = 'config-fetch'
@@ -43,10 +43,10 @@ class GetPipelineByIDPipelineErrors:
     
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable error message."""
-    type: GetPipelineByIDPipelineErrorsTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: GetPipelineByIDPipelineErrorsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of error."""
     
-class GetPipelineByIDPipelineStateEnum(str, Enum):
+class GetPipelineByIDPipelineState(str, Enum):
     r"""The current state of the pipeline."""
     CREATED = 'created'
     ERRORED = 'errored'
@@ -65,7 +65,7 @@ class GetPipelineByIDPipelineTriggerActor:
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
     r"""The login information for the user on the VCS."""
     
-class GetPipelineByIDPipelineTriggerTypeEnum(str, Enum):
+class GetPipelineByIDPipelineTriggerType(str, Enum):
     r"""The type of trigger."""
     SCHEDULED_PIPELINE = 'scheduled_pipeline'
     EXPLICIT = 'explicit'
@@ -82,7 +82,7 @@ class GetPipelineByIDPipelineTrigger:
     r"""The user who triggered the Pipeline."""
     received_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('received_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the trigger was received."""
-    type: GetPipelineByIDPipelineTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: GetPipelineByIDPipelineTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of trigger."""
     
 
@@ -137,7 +137,7 @@ class GetPipelineByIDPipeline:
     r"""The number of the pipeline."""
     project_slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('project_slug') }})
     r"""The project-slug for the pipeline."""
-    state: GetPipelineByIDPipelineStateEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
+    state: GetPipelineByIDPipelineState = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('state') }})
     r"""The current state of the pipeline."""
     trigger: GetPipelineByIDPipelineTrigger = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger') }})
     r"""A summary of the trigger."""

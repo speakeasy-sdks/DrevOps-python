@@ -23,7 +23,7 @@ class GetProjectBySlugDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class GetProjectBySlugProjectVcsInfoProviderEnum(str, Enum):
+class GetProjectBySlugProjectVcsInfoProvider(str, Enum):
     r"""The VCS provider"""
     BITBUCKET = 'Bitbucket'
     CIRCLE_CI = 'CircleCI'
@@ -36,7 +36,7 @@ class GetProjectBySlugProjectVcsInfo:
     r"""Information about the VCS that hosts the project source code."""
     
     default_branch: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_branch') }})
-    provider: GetProjectBySlugProjectVcsInfoProviderEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
+    provider: GetProjectBySlugProjectVcsInfoProvider = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
     r"""The VCS provider"""
     vcs_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('vcs_url') }})
     r"""URL to the repository hosting the project's code"""

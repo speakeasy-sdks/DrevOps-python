@@ -8,7 +8,7 @@ from enum import Enum
 from sdk import utils
 from typing import Any, Optional
 
-class GetProjectWorkflowsPageDataReportingWindowEnum(str, Enum):
+class GetProjectWorkflowsPageDataReportingWindow(str, Enum):
     r"""The time window used to calculate summary metrics."""
     LAST_7_DAYS = 'last-7-days'
     LAST_90_DAYS = 'last-90-days'
@@ -24,7 +24,7 @@ class GetProjectWorkflowsPageDataRequest:
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     branches: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'branches', 'style': 'form', 'explode': True }})
     r"""The names of VCS branches to include in branch-level workflow metrics."""
-    reporting_window: Optional[GetProjectWorkflowsPageDataReportingWindowEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
+    reporting_window: Optional[GetProjectWorkflowsPageDataReportingWindow] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
     r"""The time window used to calculate summary metrics."""
     workflow_names: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'workflow-names', 'style': 'form', 'explode': True }})
     r"""The names of workflows to include in workflow-level metrics."""

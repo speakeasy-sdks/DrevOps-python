@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class GetWebhooksScopeTypeEnum(str, Enum):
+class GetWebhooksScopeType(str, Enum):
     r"""Type of the scope being used"""
     PROJECT = 'project'
 
@@ -21,7 +21,7 @@ class GetWebhooksRequest:
     
     scope_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'scope-id', 'style': 'form', 'explode': True }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
-    scope_type: GetWebhooksScopeTypeEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'scope-type', 'style': 'form', 'explode': True }})
+    scope_type: GetWebhooksScopeType = dataclasses.field(metadata={'query_param': { 'field_name': 'scope-type', 'style': 'form', 'explode': True }})
     r"""Type of the scope being used"""
     
 
@@ -32,7 +32,7 @@ class GetWebhooksDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class GetWebhooks200ApplicationJSONWebhookEventsEnum(str, Enum):
+class GetWebhooks200ApplicationJSONWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
@@ -54,7 +54,7 @@ class GetWebhooks200ApplicationJSONWebhook:
     
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
-    events: list[GetWebhooks200ApplicationJSONWebhookEventsEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: list[GetWebhooks200ApplicationJSONWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     r"""Events that will trigger the webhook"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the webhook"""

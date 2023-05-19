@@ -26,7 +26,7 @@ class ListCheckoutKeysDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class ListCheckoutKeysCheckoutKeyListResponseCheckoutKeyCheckoutKeyTypeEnum(str, Enum):
+class ListCheckoutKeysCheckoutKeyListResponseCheckoutKeyCheckoutKeyType(str, Enum):
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     DEPLOY_KEY = 'deploy-key'
     GITHUB_USER_KEY = 'github-user-key'
@@ -44,7 +44,7 @@ class ListCheckoutKeysCheckoutKeyListResponseCheckoutKey:
     r"""A boolean value that indicates if this key is preferred."""
     public_key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('public-key') }})
     r"""A public SSH key."""
-    type: ListCheckoutKeysCheckoutKeyListResponseCheckoutKeyCheckoutKeyTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: ListCheckoutKeysCheckoutKeyListResponseCheckoutKeyCheckoutKeyType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     
 

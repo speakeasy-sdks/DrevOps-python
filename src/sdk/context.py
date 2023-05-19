@@ -33,6 +33,7 @@ class Context:
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -63,6 +64,7 @@ class Context:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -90,6 +92,7 @@ class Context:
         
         url = utils.generate_url(operations.DeleteContextRequest, base_url, '/context/{context-id}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -119,6 +122,7 @@ class Context:
         
         url = utils.generate_url(operations.DeleteEnvironmentVariableFromContextRequest, base_url, '/context/{context-id}/environment-variable/{env-var-name}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -148,6 +152,7 @@ class Context:
         
         url = utils.generate_url(operations.GetContextRequest, base_url, '/context/{context-id}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -178,6 +183,7 @@ class Context:
         url = base_url.removesuffix('/') + '/context'
         headers = {}
         query_params = utils.get_query_params(operations.ListContextsRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -208,6 +214,7 @@ class Context:
         url = utils.generate_url(operations.ListEnvironmentVariablesFromContextRequest, base_url, '/context/{context-id}/environment-variable', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListEnvironmentVariablesFromContextRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

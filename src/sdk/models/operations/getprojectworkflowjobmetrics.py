@@ -11,7 +11,7 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class GetProjectWorkflowJobMetricsReportingWindowEnum(str, Enum):
+class GetProjectWorkflowJobMetricsReportingWindow(str, Enum):
     r"""The time window used to calculate summary metrics."""
     LAST_7_DAYS = 'last-7-days'
     LAST_90_DAYS = 'last-90-days'
@@ -33,7 +33,7 @@ class GetProjectWorkflowJobMetricsRequest:
     r"""The name of a vcs branch. If not passed we will scope the API call to the default branch."""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page-token', 'style': 'form', 'explode': True }})
     r"""A token to retrieve the next page of results."""
-    reporting_window: Optional[GetProjectWorkflowJobMetricsReportingWindowEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
+    reporting_window: Optional[GetProjectWorkflowJobMetricsReportingWindow] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
     r"""The time window used to calculate summary metrics."""
     
 

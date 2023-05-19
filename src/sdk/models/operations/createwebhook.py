@@ -11,11 +11,11 @@ from marshmallow import fields
 from sdk import utils
 from typing import Optional
 
-class CreateWebhookRequestBodyEventsEnum(str, Enum):
+class CreateWebhookRequestBodyEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
-class CreateWebhookRequestBodyScopeTypeEnum(str, Enum):
+class CreateWebhookRequestBodyScopeType(str, Enum):
     r"""Type of the scope being used"""
     PROJECT = 'project'
 
@@ -27,7 +27,7 @@ class CreateWebhookRequestBodyScope:
     
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
-    type: CreateWebhookRequestBodyScopeTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: CreateWebhookRequestBodyScopeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the scope being used"""
     
 
@@ -36,7 +36,7 @@ class CreateWebhookRequestBodyScope:
 class CreateWebhookRequestBody:
     r"""The parameters for a create webhook request"""
     
-    events: list[CreateWebhookRequestBodyEventsEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: list[CreateWebhookRequestBodyEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     r"""Events that will trigger the webhook"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Name of the webhook"""
@@ -57,7 +57,7 @@ class CreateWebhookDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class CreateWebhookWebhookEventsEnum(str, Enum):
+class CreateWebhookWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
@@ -80,7 +80,7 @@ class CreateWebhookWebhook:
     
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
-    events: list[CreateWebhookWebhookEventsEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: list[CreateWebhookWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     r"""Events that will trigger the webhook"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the webhook"""

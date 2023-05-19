@@ -38,7 +38,7 @@ class GetProjectWorkflowRunsDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class GetProjectWorkflowRuns200ApplicationJSONItemsStatusEnum(str, Enum):
+class GetProjectWorkflowRuns200ApplicationJSONItemsStatus(str, Enum):
     r"""Workflow status."""
     SUCCESS = 'success'
     FAILED = 'failed'
@@ -61,7 +61,7 @@ class GetProjectWorkflowRuns200ApplicationJSONItems:
     r"""The duration in seconds of a run."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the workflow."""
-    status: GetProjectWorkflowRuns200ApplicationJSONItemsStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: GetProjectWorkflowRuns200ApplicationJSONItemsStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""Workflow status."""
     stopped_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stopped_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the workflow stopped."""

@@ -33,6 +33,7 @@ class Pipeline:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -62,6 +63,7 @@ class Pipeline:
         
         url = utils.generate_url(operations.GetPipelineByIDRequest, base_url, '/pipeline/{pipeline-id}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -91,6 +93,7 @@ class Pipeline:
         
         url = utils.generate_url(operations.GetPipelineByNumberRequest, base_url, '/project/{project-slug}/pipeline/{pipeline-number}', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -120,6 +123,7 @@ class Pipeline:
         
         url = utils.generate_url(operations.GetPipelineConfigByIDRequest, base_url, '/pipeline/{pipeline-id}/config', request)
         headers = {}
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -150,6 +154,7 @@ class Pipeline:
         url = utils.generate_url(operations.ListMyPipelinesRequest, base_url, '/project/{project-slug}/pipeline/mine', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListMyPipelinesRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -180,6 +185,7 @@ class Pipeline:
         url = base_url.removesuffix('/') + '/pipeline'
         headers = {}
         query_params = utils.get_query_params(operations.ListPipelinesRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -210,6 +216,7 @@ class Pipeline:
         url = utils.generate_url(operations.ListPipelinesForProjectRequest, base_url, '/project/{project-slug}/pipeline', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListPipelinesForProjectRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -240,6 +247,7 @@ class Pipeline:
         url = utils.generate_url(operations.ListWorkflowsByPipelineIDRequest, base_url, '/pipeline/{pipeline-id}/workflow', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListWorkflowsByPipelineIDRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -272,6 +280,7 @@ class Pipeline:
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

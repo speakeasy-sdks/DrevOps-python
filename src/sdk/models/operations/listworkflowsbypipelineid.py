@@ -28,7 +28,7 @@ class ListWorkflowsByPipelineIDDefaultApplicationJSON:
     
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-class ListWorkflowsByPipelineIDWorkflowListResponseWorkflowStatusEnum(str, Enum):
+class ListWorkflowsByPipelineIDWorkflowListResponseWorkflowStatus(str, Enum):
     r"""The current status of the workflow."""
     SUCCESS = 'success'
     RUNNING = 'running'
@@ -40,7 +40,7 @@ class ListWorkflowsByPipelineIDWorkflowListResponseWorkflowStatusEnum(str, Enum)
     CANCELED = 'canceled'
     UNAUTHORIZED = 'unauthorized'
 
-class ListWorkflowsByPipelineIDWorkflowListResponseWorkflowTagEnum(str, Enum):
+class ListWorkflowsByPipelineIDWorkflowListResponseWorkflowTag(str, Enum):
     r"""Tag used for the workflow"""
     SETUP = 'setup'
 
@@ -63,13 +63,13 @@ class ListWorkflowsByPipelineIDWorkflowListResponseWorkflow:
     project_slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('project_slug') }})
     r"""The project-slug for the pipeline this workflow belongs to."""
     started_by: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('started_by') }})
-    status: ListWorkflowsByPipelineIDWorkflowListResponseWorkflowStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+    status: ListWorkflowsByPipelineIDWorkflowListResponseWorkflowStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""The current status of the workflow."""
     stopped_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stopped_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the workflow stopped."""
     canceled_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canceled_by'), 'exclude': lambda f: f is None }})
     errored_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errored_by'), 'exclude': lambda f: f is None }})
-    tag: Optional[ListWorkflowsByPipelineIDWorkflowListResponseWorkflowTagEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
+    tag: Optional[ListWorkflowsByPipelineIDWorkflowListResponseWorkflowTag] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
     r"""Tag used for the workflow"""
     
 
