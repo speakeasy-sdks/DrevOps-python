@@ -8,6 +8,7 @@ src/sdk/user.py
 src/sdk/webhook.py
 src/sdk/workflow.py
 src/sdk/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/sdk/__init__.py
