@@ -1,3 +1,4 @@
+src/sdk/sdkconfiguration.py
 src/sdk/context.py
 src/sdk/insights.py
 src/sdk/job.py
