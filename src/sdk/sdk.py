@@ -15,7 +15,7 @@ from sdk import utils
 from sdk.models import shared
 
 class SDK:
-    r"""This describes the resources that make up the CircleCI API v2.
+    r"""CircleCI API: This describes the resources that make up the CircleCI API v2.
     
     # Authentication
     
