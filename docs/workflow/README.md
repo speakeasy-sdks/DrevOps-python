@@ -20,7 +20,7 @@ from sdk.models import operations
 
 s = sdk.SDK(
     security=shared.Security(
-        api_key_header="YOUR_API_KEY_HERE",
+        api_key_header="",
     ),
 )
 
@@ -47,7 +47,7 @@ from sdk.models import operations
 
 s = sdk.SDK(
     security=shared.Security(
-        api_key_header="YOUR_API_KEY_HERE",
+        api_key_header="",
     ),
 )
 
@@ -73,7 +73,7 @@ from sdk.models import operations
 
 s = sdk.SDK(
     security=shared.Security(
-        api_key_header="YOUR_API_KEY_HERE",
+        api_key_header="",
     ),
 )
 
@@ -99,7 +99,7 @@ from sdk.models import operations
 
 s = sdk.SDK(
     security=shared.Security(
-        api_key_header="YOUR_API_KEY_HERE",
+        api_key_header="",
     ),
 )
 
@@ -125,7 +125,7 @@ from sdk.models import operations
 
 s = sdk.SDK(
     security=shared.Security(
-        api_key_header="YOUR_API_KEY_HERE",
+        api_key_header="",
     ),
 )
 
