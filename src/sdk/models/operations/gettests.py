@@ -8,27 +8,31 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetTestsRequest:
-    
     job_number: Any = dataclasses.field(metadata={'path_param': { 'field_name': 'job-number', 'style': 'simple', 'explode': False }})
     r"""The number of the job."""
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetTestsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetTestsTestsResponseItems:
-    
     classname: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classname') }})
     r"""The programmatic location of the test."""
     file: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file') }})
@@ -45,19 +49,23 @@ class GetTestsTestsResponseItems:
     r"""The program that generated the test results"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetTestsTestsResponse:
     r"""A paginated list of test results."""
-    
     items: list[GetTestsTestsResponseItems] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetTestsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_tests_default_application_json_object: Optional[GetTestsDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -66,3 +74,4 @@ class GetTestsResponse:
     tests_response: Optional[GetTestsTestsResponse] = dataclasses.field(default=None)
     r"""A paginated list of test results."""
     
+

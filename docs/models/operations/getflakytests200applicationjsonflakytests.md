@@ -1,0 +1,19 @@
+# GetFlakyTests200ApplicationJSONFlakyTests
+
+
+## Fields
+
+| Field                                                           | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `classname`                                                     | *str*                                                           | :heavy_check_mark:                                              | The class the test belongs to.                                  |
+| `file`                                                          | *str*                                                           | :heavy_check_mark:                                              | The file the test belongs to.                                   |
+| `job_name`                                                      | *str*                                                           | :heavy_check_mark:                                              | The name of the job.                                            |
+| `job_number`                                                    | *int*                                                           | :heavy_check_mark:                                              | The number of the job.                                          |
+| `pipeline_number`                                               | *int*                                                           | :heavy_check_mark:                                              | The number of the pipeline.                                     |
+| `source`                                                        | *str*                                                           | :heavy_check_mark:                                              | The source of the test.                                         |
+| `test_name`                                                     | *str*                                                           | :heavy_check_mark:                                              | The name of the test.                                           |
+| `time_wasted`                                                   | *Optional[int]*                                                 | :heavy_minus_sign:                                              | N/A                                                             |
+| `times_flaked`                                                  | *int*                                                           | :heavy_check_mark:                                              | The number of times the test flaked.                            |
+| `workflow_created_at`                                           | *Any*                                                           | :heavy_check_mark:                                              | The date and time when workflow was created.                    |
+| `workflow_id`                                                   | *Any*                                                           | :heavy_check_mark:                                              | The ID of the workflow associated with the provided test counts |
+| `workflow_name`                                                 | *str*                                                           | :heavy_check_mark:                                              | The name of the workflow.                                       |

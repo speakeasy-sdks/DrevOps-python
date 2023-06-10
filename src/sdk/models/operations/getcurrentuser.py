@@ -9,18 +9,20 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetCurrentUserDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetCurrentUserUser:
     r"""User login information."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the user."""
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
@@ -29,9 +31,11 @@ class GetCurrentUserUser:
     r"""The name of the user."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetCurrentUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_current_user_default_application_json_object: Optional[GetCurrentUserDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -40,3 +44,4 @@ class GetCurrentUserResponse:
     user: Optional[GetCurrentUserUser] = dataclasses.field(default=None)
     r"""User login information."""
     
+

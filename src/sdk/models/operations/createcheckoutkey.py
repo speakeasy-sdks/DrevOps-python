@@ -18,28 +18,34 @@ class CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateCheckoutKeyCheckoutKeyInput:
-    
     type: CreateCheckoutKeyCheckoutKeyInputCheckoutKeyInputType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of checkout key to create. This may be either `deploy-key` or `user-key`."""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateCheckoutKeyRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     request_body: Optional[CreateCheckoutKeyCheckoutKeyInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateCheckoutKeyDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class CreateCheckoutKeyCheckoutKeyCheckoutKeyType(str, Enum):
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     DEPLOY_KEY = 'deploy-key'
@@ -47,10 +53,10 @@ class CreateCheckoutKeyCheckoutKeyCheckoutKeyType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateCheckoutKeyCheckoutKey:
     r"""The checkout key."""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the checkout key was created."""
     fingerprint: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fingerprint') }})
@@ -63,9 +69,11 @@ class CreateCheckoutKeyCheckoutKey:
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateCheckoutKeyResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     checkout_key: Optional[CreateCheckoutKeyCheckoutKey] = dataclasses.field(default=None)
@@ -74,3 +82,4 @@ class CreateCheckoutKeyResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

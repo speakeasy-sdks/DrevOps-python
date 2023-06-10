@@ -12,9 +12,9 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class ListPipelinesForProjectRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     branch: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'branch', 'style': 'form', 'explode': True }})
@@ -23,13 +23,17 @@ class ListPipelinesForProjectRequest:
     r"""A token to retrieve the next page of results."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class ListPipelinesForProjectPipelineListResponsePipelineErrorsType(str, Enum):
     r"""The type of error."""
     CONFIG = 'config'
@@ -41,15 +45,17 @@ class ListPipelinesForProjectPipelineListResponsePipelineErrorsType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponsePipelineErrors:
     r"""An error with a type and message."""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable error message."""
     type: ListPipelinesForProjectPipelineListResponsePipelineErrorsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""The type of error."""
     
+
+
 class ListPipelinesForProjectPipelineListResponsePipelineState(str, Enum):
     r"""The current state of the pipeline."""
     CREATED = 'created'
@@ -60,15 +66,17 @@ class ListPipelinesForProjectPipelineListResponsePipelineState(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponsePipelineTriggerActor:
     r"""The user who triggered the Pipeline."""
-    
     avatar_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('avatar_url') }})
     r"""URL to the user's avatar on the VCS"""
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
     r"""The login information for the user on the VCS."""
     
+
+
 class ListPipelinesForProjectPipelineListResponsePipelineTriggerType(str, Enum):
     r"""The type of trigger."""
     SCHEDULED_PIPELINE = 'scheduled_pipeline'
@@ -78,10 +86,10 @@ class ListPipelinesForProjectPipelineListResponsePipelineTriggerType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponsePipelineTrigger:
     r"""A summary of the trigger."""
-    
     actor: ListPipelinesForProjectPipelineListResponsePipelineTriggerActor = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actor') }})
     r"""The user who triggered the Pipeline."""
     received_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('received_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -90,22 +98,26 @@ class ListPipelinesForProjectPipelineListResponsePipelineTrigger:
     r"""The type of trigger."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponsePipelineVcsCommit:
     r"""The latest commit in the pipeline."""
-    
     body: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('body') }})
     r"""The body of the commit message."""
     subject: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subject') }})
     r"""The subject of the commit message."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponsePipelineVcs:
     r"""VCS information for the pipeline."""
-    
     origin_repository_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin_repository_url') }})
     r"""URL for the repository where the trigger originated. For fork-PR pipelines, this is the URL to the fork. For other pipelines the `origin_` and `target_repository_url`s will be the same."""
     provider_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider_name') }})
@@ -126,11 +138,13 @@ class ListPipelinesForProjectPipelineListResponsePipelineVcs:
     r"""The tag used by the pipeline. The commit that this tag points to was used for the pipeline. Note that `branch` and `tag` are mutually exclusive."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponsePipeline:
     r"""A pipeline response."""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the pipeline was created."""
     errors: list[ListPipelinesForProjectPipelineListResponsePipelineErrors] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors') }})
@@ -152,19 +166,23 @@ class ListPipelinesForProjectPipelineListResponsePipeline:
     r"""VCS information for the pipeline."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListPipelinesForProjectPipelineListResponse:
     r"""List of pipelines"""
-    
     items: list[ListPipelinesForProjectPipelineListResponsePipeline] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class ListPipelinesForProjectResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_pipelines_for_project_default_application_json_object: Optional[ListPipelinesForProjectDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -173,3 +191,4 @@ class ListPipelinesForProjectResponse:
     r"""A sequence of pipelines."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

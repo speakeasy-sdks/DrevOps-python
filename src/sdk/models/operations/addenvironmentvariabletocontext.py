@@ -12,16 +12,18 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AddEnvironmentVariableToContextRequestBody:
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""The value of the environment variable"""
     
 
+
+
+
 @dataclasses.dataclass
 class AddEnvironmentVariableToContextRequest:
-    
     context_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'context-id', 'style': 'simple', 'explode': False }})
     r"""ID of the context (UUID)"""
     env_var_name: str = dataclasses.field(metadata={'path_param': { 'field_name': 'env-var-name', 'style': 'simple', 'explode': False }})
@@ -29,27 +31,33 @@ class AddEnvironmentVariableToContextRequest:
     request_body: Optional[AddEnvironmentVariableToContextRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AddEnvironmentVariableToContextDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AddEnvironmentVariableToContext200ApplicationJSONMessageResponse:
     r"""message response"""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable message"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AddEnvironmentVariableToContext200ApplicationJSON1:
-    
     context_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_id') }})
     r"""ID of the context (UUID)"""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -60,9 +68,11 @@ class AddEnvironmentVariableToContext200ApplicationJSON1:
     r"""The name of the environment variable"""
     
 
+
+
+
 @dataclasses.dataclass
 class AddEnvironmentVariableToContextResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     add_environment_variable_to_context_200_application_json_any_of: Optional[Any] = dataclasses.field(default=None)
@@ -71,3 +81,4 @@ class AddEnvironmentVariableToContextResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -1,0 +1,11 @@
+# GetPipelineByIDPipelineErrors
+
+An error with a type and message.
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `message`                                                                                         | *str*                                                                                             | :heavy_check_mark:                                                                                | A human-readable error message.                                                                   |
+| `type`                                                                                            | [GetPipelineByIDPipelineErrorsType](../../models/operations/getpipelinebyidpipelineerrorstype.md) | :heavy_check_mark:                                                                                | The type of error.                                                                                |

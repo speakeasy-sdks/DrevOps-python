@@ -8,35 +8,46 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from marshmallow import fields
 from sdk import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class GetWorkflowSummaryBranches:
+    r"""The names of VCS branches to include in branch-level workflow metrics."""
+    pass
+
 
 
 @dataclasses.dataclass
 class GetWorkflowSummaryRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     workflow_name: str = dataclasses.field(metadata={'path_param': { 'field_name': 'workflow-name', 'style': 'simple', 'explode': False }})
     r"""The name of the workflow."""
     all_branches: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'all-branches', 'style': 'form', 'explode': True }})
     r"""Whether to retrieve data for all branches combined. Use either this parameter OR the branch name parameter."""
-    branches: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'branches', 'style': 'form', 'explode': True }})
+    branches: Optional[GetWorkflowSummaryBranches] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'branches', 'style': 'form', 'explode': True }})
     r"""The names of VCS branches to include in branch-level workflow metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowSummaryDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowSummary200ApplicationJSONMetricsDurationMetrics:
     r"""Metrics relating to the duration of runs for a workflow."""
-    
     max: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max') }})
     r"""The max duration, in seconds, among a group of runs."""
     mean: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mean') }})
@@ -51,11 +62,13 @@ class GetWorkflowSummary200ApplicationJSONMetricsDurationMetrics:
     r"""The standard deviation, in seconds, among a group of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowSummary200ApplicationJSONMetrics:
     r"""Metrics aggregated across a workflow for a given time window."""
-    
     duration_metrics: GetWorkflowSummary200ApplicationJSONMetricsDurationMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('duration_metrics') }})
     r"""Metrics relating to the duration of runs for a workflow."""
     failed_runs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failed_runs') }})
@@ -77,11 +90,13 @@ class GetWorkflowSummary200ApplicationJSONMetrics:
     r"""The start of the aggregation window for workflow metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowSummary200ApplicationJSONTrends:
     r"""Trends for aggregated metrics across a workflow for a given time window."""
-    
     failed_runs: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failed_runs') }})
     r"""The trend value for number of failed runs."""
     median_duration_secs: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('median_duration_secs') }})
@@ -100,11 +115,13 @@ class GetWorkflowSummary200ApplicationJSONTrends:
     r"""The trend value for total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowSummary200ApplicationJSON:
     r"""Workflow level aggregated metrics and trends response"""
-    
     metrics: GetWorkflowSummary200ApplicationJSONMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Metrics aggregated across a workflow for a given time window."""
     trends: GetWorkflowSummary200ApplicationJSONTrends = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trends') }})
@@ -113,9 +130,11 @@ class GetWorkflowSummary200ApplicationJSON:
     r"""A list of all the workflow names for a given project."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetWorkflowSummaryResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_workflow_summary_200_application_json_object: Optional[GetWorkflowSummary200ApplicationJSON] = dataclasses.field(default=None)
@@ -124,3 +143,4 @@ class GetWorkflowSummaryResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

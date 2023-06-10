@@ -12,20 +12,24 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ListWorkflowJobsRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the workflow."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListWorkflowJobsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class ListWorkflowJobsWorkflowJobListResponseJobStatus(str, Enum):
     r"""The current status of the job."""
     SUCCESS = 'success'
@@ -50,10 +54,10 @@ class ListWorkflowJobsWorkflowJobListResponseJobType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListWorkflowJobsWorkflowJobListResponseJob:
     r"""Job"""
-    
     dependencies: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dependencies') }})
     r"""A sequence of the unique job IDs for the jobs that this job depends upon in the workflow."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -80,19 +84,23 @@ class ListWorkflowJobsWorkflowJobListResponseJob:
     r"""The time when the job stopped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListWorkflowJobsWorkflowJobListResponse:
     r"""A paginated sequence of jobs."""
-    
     items: list[ListWorkflowJobsWorkflowJobListResponseJob] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class ListWorkflowJobsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_workflow_jobs_default_application_json_object: Optional[ListWorkflowJobsDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -101,3 +109,4 @@ class ListWorkflowJobsResponse:
     workflow_job_list_response: Optional[ListWorkflowJobsWorkflowJobListResponse] = dataclasses.field(default=None)
     r"""A paginated sequence of jobs."""
     
+

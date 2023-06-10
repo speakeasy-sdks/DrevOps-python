@@ -8,35 +8,41 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ApprovePendingApprovalJobByIDRequest:
-    
     approval_request_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'approval_request_id', 'style': 'simple', 'explode': False }})
     r"""The ID of the job being approved."""
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the workflow."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ApprovePendingApprovalJobByIDDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ApprovePendingApprovalJobByIDMessageResponse:
     r"""message response"""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable message"""
     
 
+
+
+
 @dataclasses.dataclass
 class ApprovePendingApprovalJobByIDResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     approve_pending_approval_job_by_id_default_application_json_object: Optional[ApprovePendingApprovalJobByIDDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -45,3 +51,4 @@ class ApprovePendingApprovalJobByIDResponse:
     r"""A confirmation message."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -8,6 +8,13 @@ from enum import Enum
 from sdk import utils
 from typing import Any, Optional
 
+
+
+@dataclasses.dataclass
+class GetProjectWorkflowsPageDataBranches:
+    r"""The names of VCS branches to include in branch-level workflow metrics."""
+    pass
+
 class GetProjectWorkflowsPageDataReportingWindow(str, Enum):
     r"""The time window used to calculate summary metrics."""
     LAST_7_DAYS = 'last-7-days'
@@ -17,32 +24,43 @@ class GetProjectWorkflowsPageDataReportingWindow(str, Enum):
     LAST_60_DAYS = 'last-60-days'
 
 
+
+@dataclasses.dataclass
+class GetProjectWorkflowsPageDataWorkflowNames:
+    r"""The names of workflows to include in workflow-level metrics."""
+    pass
+
+
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageDataRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
-    branches: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'branches', 'style': 'form', 'explode': True }})
+    branches: Optional[GetProjectWorkflowsPageDataBranches] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'branches', 'style': 'form', 'explode': True }})
     r"""The names of VCS branches to include in branch-level workflow metrics."""
     reporting_window: Optional[GetProjectWorkflowsPageDataReportingWindow] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
     r"""The time window used to calculate summary metrics."""
-    workflow_names: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'workflow-names', 'style': 'form', 'explode': True }})
+    workflow_names: Optional[GetProjectWorkflowsPageDataWorkflowNames] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'workflow-names', 'style': 'form', 'explode': True }})
     r"""The names of workflows to include in workflow-level metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageDataDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectDataMetrics:
     r"""Metrics aggregated across all workflows and branches for a project."""
-    
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
     throughput: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('throughput') }})
     r"""The average number of runs per day."""
@@ -54,11 +72,13 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectDataMetrics:
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectDataTrends:
     r"""Metric trends aggregated across all workflows and branches for a project."""
-    
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
     r"""The trend value for the success rate."""
     throughput: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('throughput') }})
@@ -71,22 +91,26 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectDataTrends:
     r"""The trend value for total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectData:
     r"""Metrics and trends data aggregated for a given project."""
-    
     metrics: GetProjectWorkflowsPageData200ApplicationJSONProjectDataMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Metrics aggregated across all workflows and branches for a project."""
     trends: GetProjectWorkflowsPageData200ApplicationJSONProjectDataTrends = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trends') }})
     r"""Metric trends aggregated across all workflows and branches for a project."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchDataMetrics:
     r"""Metrics aggregated across a workflow or branchfor a project."""
-    
     p95_duration_secs: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('p95_duration_secs') }})
     r"""The 95th percentile duration among a group of workflow runs."""
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
@@ -96,11 +120,13 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchDataMetr
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchDataTrends:
     r"""Trends aggregated across a workflow or branch for a project."""
-    
     p95_duration_secs: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('p95_duration_secs') }})
     r"""The 95th percentile duration among a group of workflow runs."""
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
@@ -111,10 +137,12 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchDataTren
     r"""The trend value for total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchData:
-    
     branch: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('branch') }})
     r"""The VCS branch of a workflow's trigger."""
     metrics: GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchDataMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
@@ -125,11 +153,13 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowBranchData:
     r"""The name of the workflow."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowDataMetrics:
     r"""Metrics aggregated across a workflow or branchfor a project."""
-    
     p95_duration_secs: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('p95_duration_secs') }})
     r"""The 95th percentile duration among a group of workflow runs."""
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
@@ -139,11 +169,13 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowDataMetrics:
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowDataTrends:
     r"""Trends aggregated across a workflow or branch for a project."""
-    
     p95_duration_secs: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('p95_duration_secs') }})
     r"""The 95th percentile duration among a group of workflow runs."""
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
@@ -154,10 +186,12 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowDataTrends:
     r"""The trend value for total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowData:
-    
     metrics: GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowDataMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Metrics aggregated across a workflow or branchfor a project."""
     trends: GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowDataTrends = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trends') }})
@@ -166,11 +200,13 @@ class GetProjectWorkflowsPageData200ApplicationJSONProjectWorkflowData:
     r"""The name of the workflow."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageData200ApplicationJSON:
     r"""Aggregated summary metrics and trends by workflow and branches"""
-    
     all_branches: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('all_branches'), 'exclude': lambda f: f is None }})
     r"""A list of all the branches for a given project."""
     all_workflows: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('all_workflows'), 'exclude': lambda f: f is None }})
@@ -187,9 +223,11 @@ class GetProjectWorkflowsPageData200ApplicationJSON:
     r"""A list of metrics and trends data for workflows for a given project."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetProjectWorkflowsPageDataResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_project_workflows_page_data_200_application_json_object: Optional[GetProjectWorkflowsPageData200ApplicationJSON] = dataclasses.field(default=None)
@@ -198,3 +236,4 @@ class GetProjectWorkflowsPageDataResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

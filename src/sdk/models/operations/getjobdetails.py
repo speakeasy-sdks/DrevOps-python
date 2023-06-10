@@ -12,59 +12,69 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetJobDetailsRequest:
-    
     job_number: Any = dataclasses.field(metadata={'path_param': { 'field_name': 'job-number', 'style': 'simple', 'explode': False }})
     r"""The number of the job."""
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsContexts:
     r"""Information about the context."""
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the context."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsExecutor:
     r"""Information about executor used for a job."""
-    
     resource_class: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource_class') }})
     r"""Resource class name."""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Executor type."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsLatestWorkflow:
     r"""Info about the latest workflow the job was a part of."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the workflow."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the workflow."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsMessages:
     r"""Message from CircleCI execution platform."""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""Information describing message."""
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -73,40 +83,48 @@ class GetJobDetailsJobDetailsMessages:
     r"""Value describing the reason for message to be added to the job."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsOrganization:
     r"""Information about an organization."""
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the organization."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsParallelRuns:
     r"""Info about a status of the parallel run."""
-    
     index: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
     r"""Index of the parallel run."""
     status: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     r"""Status of the parallel run."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsPipeline:
     r"""Info about a pipeline the job is a part of."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the pipeline."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetailsProject:
     r"""Information about a project."""
-    
     external_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('external_url') }})
     r"""URL to the repository hosting the project's code"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -115,6 +133,8 @@ class GetJobDetailsJobDetailsProject:
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
+
+
 class GetJobDetailsJobDetailsStatus(str, Enum):
     r"""The current status of the job."""
     SUCCESS = 'success'
@@ -134,10 +154,10 @@ class GetJobDetailsJobDetailsStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobDetailsJobDetails:
     r"""Job Details"""
-    
     contexts: list[GetJobDetailsJobDetailsContexts] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts') }})
     r"""List of contexts used by the job."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -176,9 +196,11 @@ class GetJobDetailsJobDetails:
     r"""The time when the job stopped."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetJobDetailsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_job_details_default_application_json_object: Optional[GetJobDetailsDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -187,3 +209,4 @@ class GetJobDetailsResponse:
     r"""Job details."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -17,9 +17,9 @@ class ListContextsOwnerType(str, Enum):
     ORGANIZATION = 'organization'
 
 
+
 @dataclasses.dataclass
 class ListContextsRequest:
-    
     owner_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'owner-id', 'style': 'form', 'explode': True }})
     r"""The unique ID of the owner of the context. Specify either this or owner-slug."""
     owner_slug: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'owner-slug', 'style': 'form', 'explode': True }})
@@ -30,18 +30,22 @@ class ListContextsRequest:
     r"""A token to retrieve the next page of results."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListContextsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListContexts200ApplicationJSONContext:
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the context was created."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -50,19 +54,23 @@ class ListContexts200ApplicationJSONContext:
     r"""The user defined name of the context."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListContexts200ApplicationJSON:
     r"""A paginated list of contexts"""
-    
     items: list[ListContexts200ApplicationJSONContext] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class ListContextsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_contexts_200_application_json_object: Optional[ListContexts200ApplicationJSON] = dataclasses.field(default=None)
@@ -71,3 +79,4 @@ class ListContextsResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

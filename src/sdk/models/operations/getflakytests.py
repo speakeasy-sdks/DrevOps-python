@@ -8,25 +8,29 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetFlakyTestsRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetFlakyTestsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetFlakyTests200ApplicationJSONFlakyTests:
-    
     classname: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classname') }})
     r"""The class the test belongs to."""
     file: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file') }})
@@ -52,20 +56,24 @@ class GetFlakyTests200ApplicationJSONFlakyTests:
     time_wasted: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('time-wasted'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetFlakyTests200ApplicationJSON:
     r"""Flaky tests response"""
-    
     flaky_tests: list[GetFlakyTests200ApplicationJSONFlakyTests] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flaky-tests') }})
     r"""A list of all instances of flakes. Note that a test is no longer considered flaky after 2 weeks have passed without a flake. Each flake resets this timer."""
     total_flaky_tests: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total-flaky-tests') }})
     r"""A count of unique tests that have failed. If your project has N tests that have flaked multiple times each, this will be equal to N."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetFlakyTestsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_flaky_tests_200_application_json_object: Optional[GetFlakyTests200ApplicationJSON] = dataclasses.field(default=None)
@@ -74,3 +82,4 @@ class GetFlakyTestsResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

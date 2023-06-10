@@ -20,9 +20,9 @@ class GetProjectWorkflowMetricsReportingWindow(str, Enum):
     LAST_60_DAYS = 'last-60-days'
 
 
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetricsRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     all_branches: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'all-branches', 'style': 'form', 'explode': True }})
@@ -35,19 +35,23 @@ class GetProjectWorkflowMetricsRequest:
     r"""The time window used to calculate summary metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetricsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetrics200ApplicationJSONItemsMetricsDurationMetrics:
     r"""Metrics relating to the duration of runs for a workflow."""
-    
     max: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max') }})
     r"""The max duration, in seconds, among a group of runs."""
     mean: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mean') }})
@@ -62,11 +66,13 @@ class GetProjectWorkflowMetrics200ApplicationJSONItemsMetricsDurationMetrics:
     r"""The standard deviation, in seconds, among a group of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetrics200ApplicationJSONItemsMetrics:
     r"""Metrics relating to a workflow's runs."""
-    
     duration_metrics: GetProjectWorkflowMetrics200ApplicationJSONItemsMetricsDurationMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('duration_metrics') }})
     r"""Metrics relating to the duration of runs for a workflow."""
     failed_runs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failed_runs') }})
@@ -86,10 +92,12 @@ class GetProjectWorkflowMetrics200ApplicationJSONItemsMetrics:
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetrics200ApplicationJSONItems:
-    
     metrics: GetProjectWorkflowMetrics200ApplicationJSONItemsMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Metrics relating to a workflow's runs."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -100,20 +108,24 @@ class GetProjectWorkflowMetrics200ApplicationJSONItems:
     r"""The start of the aggregation window for workflow metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetrics200ApplicationJSON:
     r"""Paginated workflow summary metrics."""
-    
     items: list[GetProjectWorkflowMetrics200ApplicationJSONItems] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""Workflow summary metrics."""
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetProjectWorkflowMetricsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_project_workflow_metrics_200_application_json_object: Optional[GetProjectWorkflowMetrics200ApplicationJSON] = dataclasses.field(default=None)
@@ -122,3 +134,4 @@ class GetProjectWorkflowMetricsResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

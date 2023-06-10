@@ -11,26 +11,30 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetContextRequest:
-    
     context_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'context-id', 'style': 'simple', 'explode': False }})
     r"""ID of the context (UUID)"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetContextDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetContextContext:
     r"""The context"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the context was created."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -39,9 +43,11 @@ class GetContextContext:
     r"""The user defined name of the context."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetContextResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     context: Optional[GetContextContext] = dataclasses.field(default=None)
@@ -50,3 +56,4 @@ class GetContextResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

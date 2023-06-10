@@ -43,10 +43,10 @@ class UpdateScheduleUpdateScheduleParametersTimetableMonths(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleUpdateScheduleParametersTimetable:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_month: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month'), 'exclude': lambda f: f is None }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
     days_of_week: Optional[list[UpdateScheduleUpdateScheduleParametersTimetableDaysOfWeek]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week'), 'exclude': lambda f: f is None }})
@@ -59,11 +59,13 @@ class UpdateScheduleUpdateScheduleParametersTimetable:
     r"""Number of times a schedule triggers per hour, value must be between 1 and 60"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleUpdateScheduleParameters:
     r"""The parameters for an update schedule request"""
-    
     attribution_actor: Optional[UpdateScheduleUpdateScheduleParametersAttributionActor] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribution-actor'), 'exclude': lambda f: f is None }})
     r"""The attribution-actor of the scheduled pipeline."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
@@ -76,27 +78,33 @@ class UpdateScheduleUpdateScheduleParameters:
     r"""Timetable that specifies when a schedule triggers."""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateScheduleRequest:
-    
     schedule_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'schedule-id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the schedule."""
     request_body: Optional[UpdateScheduleUpdateScheduleParameters] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleScheduleUser:
     r"""The attribution actor who will run the scheduled pipeline."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the user."""
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
@@ -104,6 +112,8 @@ class UpdateScheduleScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
+
+
 class UpdateScheduleScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -131,10 +141,10 @@ class UpdateScheduleScheduleTimetable2Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleScheduleTimetable2:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_month: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month') }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -146,6 +156,8 @@ class UpdateScheduleScheduleTimetable2:
     months: Optional[list[UpdateScheduleScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
+
+
 class UpdateScheduleScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -173,10 +185,10 @@ class UpdateScheduleScheduleTimetable1Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_week: list[UpdateScheduleScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -189,11 +201,13 @@ class UpdateScheduleScheduleTimetable1:
     r"""Months in which the schedule triggers."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateScheduleSchedule:
     r"""A schedule response"""
-    
     actor: UpdateScheduleScheduleUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actor') }})
     r"""The attribution actor who will run the scheduled pipeline."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -214,9 +228,11 @@ class UpdateScheduleSchedule:
     r"""The date and time the pipeline was last updated."""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateScheduleResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
@@ -225,3 +241,4 @@ class UpdateScheduleResponse:
     update_schedule_default_application_json_object: Optional[UpdateScheduleDefaultApplicationJSON] = dataclasses.field(default=None)
     r"""Error response."""
     
+

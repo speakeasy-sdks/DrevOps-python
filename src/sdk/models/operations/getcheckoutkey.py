@@ -12,22 +12,26 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetCheckoutKeyRequest:
-    
     fingerprint: str = dataclasses.field(metadata={'path_param': { 'field_name': 'fingerprint', 'style': 'simple', 'explode': False }})
     r"""An SSH key fingerprint."""
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetCheckoutKeyDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class GetCheckoutKeyCheckoutKeyCheckoutKeyType(str, Enum):
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     DEPLOY_KEY = 'deploy-key'
@@ -35,10 +39,10 @@ class GetCheckoutKeyCheckoutKeyCheckoutKeyType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetCheckoutKeyCheckoutKey:
     r"""The checkout key."""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the checkout key was created."""
     fingerprint: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fingerprint') }})
@@ -51,9 +55,11 @@ class GetCheckoutKeyCheckoutKey:
     r"""The type of checkout key. This may be either `deploy-key` or `github-user-key`."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetCheckoutKeyResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     checkout_key: Optional[GetCheckoutKeyCheckoutKey] = dataclasses.field(default=None)
@@ -62,3 +68,4 @@ class GetCheckoutKeyResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

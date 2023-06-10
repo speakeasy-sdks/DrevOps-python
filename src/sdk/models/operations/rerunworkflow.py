@@ -9,10 +9,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RerunWorkflowRerunWorkflowParameters:
     r"""The information you can supply when rerunning a workflow."""
-    
     enable_ssh: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_ssh'), 'exclude': lambda f: f is None }})
     r"""Whether to enable SSH access for the triggering user on the newly-rerun job. Requires the jobs parameter to be used and so is mutually exclusive with the from_failed parameter."""
     from_failed: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from_failed'), 'exclude': lambda f: f is None }})
@@ -23,34 +23,42 @@ class RerunWorkflowRerunWorkflowParameters:
     r"""Completes rerun using sparse trees logic, an optimization for workflows that have disconnected subgraphs. Requires jobs parameter and so is mutually exclusive with the from_failed parameter."""
     
 
+
+
+
 @dataclasses.dataclass
 class RerunWorkflowRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the workflow."""
     request_body: Optional[RerunWorkflowRerunWorkflowParameters] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RerunWorkflowDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RerunWorkflow202ApplicationJSON:
     r"""A response to rerunning a workflow"""
-    
     workflow_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workflow_id') }})
     r"""The ID of the newly-created workflow."""
     
 
+
+
+
 @dataclasses.dataclass
 class RerunWorkflowResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
@@ -59,3 +67,4 @@ class RerunWorkflowResponse:
     rerun_workflow_default_application_json_object: Optional[RerunWorkflowDefaultApplicationJSON] = dataclasses.field(default=None)
     r"""Error response."""
     
+

@@ -1,0 +1,11 @@
+# GetProjectWorkflowMetrics200ApplicationJSON
+
+Paginated workflow summary metrics.
+
+
+## Fields
+
+| Field                                                                                                                                 | Type                                                                                                                                  | Required                                                                                                                              | Description                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                                                                                                                               | list[[GetProjectWorkflowMetrics200ApplicationJSONItems](../../models/operations/getprojectworkflowmetrics200applicationjsonitems.md)] | :heavy_check_mark:                                                                                                                    | Workflow summary metrics.                                                                                                             |
+| `next_page_token`                                                                                                                     | *str*                                                                                                                                 | :heavy_check_mark:                                                                                                                    | A token to pass as a `page-token` query parameter to return the next page of results.                                                 |

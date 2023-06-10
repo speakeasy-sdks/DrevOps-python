@@ -1,0 +1,11 @@
+# ListSchedulesForProject200ApplicationJSON
+
+A sequence of schedules
+
+
+## Fields
+
+| Field                                                                                                                                   | Type                                                                                                                                    | Required                                                                                                                                | Description                                                                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                                                                                                                                 | list[[ListSchedulesForProject200ApplicationJSONSchedule](../../models/operations/listschedulesforproject200applicationjsonschedule.md)] | :heavy_check_mark:                                                                                                                      | N/A                                                                                                                                     |
+| `next_page_token`                                                                                                                       | *str*                                                                                                                                   | :heavy_check_mark:                                                                                                                      | A token to pass as a `page-token` query parameter to return the next page of results.                                                   |
