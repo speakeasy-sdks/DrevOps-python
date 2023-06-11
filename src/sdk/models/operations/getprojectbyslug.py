@@ -9,20 +9,24 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetProjectBySlugRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectBySlugDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class GetProjectBySlugProjectVcsInfoProvider(str, Enum):
     r"""The VCS provider"""
     BITBUCKET = 'Bitbucket'
@@ -31,10 +35,10 @@ class GetProjectBySlugProjectVcsInfoProvider(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectBySlugProjectVcsInfo:
     r"""Information about the VCS that hosts the project source code."""
-    
     default_branch: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_branch') }})
     provider: GetProjectBySlugProjectVcsInfoProvider = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
     r"""The VCS provider"""
@@ -42,11 +46,13 @@ class GetProjectBySlugProjectVcsInfo:
     r"""URL to the repository hosting the project's code"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectBySlugProject:
     r"""NOTE: The definition of Project is subject to change."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the project"""
@@ -62,9 +68,11 @@ class GetProjectBySlugProject:
     r"""Information about the VCS that hosts the project source code."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetProjectBySlugResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_project_by_slug_default_application_json_object: Optional[GetProjectBySlugDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -73,3 +81,4 @@ class GetProjectBySlugResponse:
     r"""A project object"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -12,41 +12,47 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetWebhookByIDRequest:
-    
     webhook_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'webhook-id', 'style': 'simple', 'explode': False }})
     r"""ID of the webhook (UUID)"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhookByIDDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class GetWebhookByIDWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhookByIDWebhookScope:
     r"""The scope in which the relevant events that will trigger webhooks"""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the scope being used"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhookByIDWebhook:
     r"""A webhook"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
     events: list[GetWebhookByIDWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
@@ -67,9 +73,11 @@ class GetWebhookByIDWebhook:
     r"""Whether to enforce TLS certificate verification when delivering the webhook"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetWebhookByIDResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_webhook_by_id_default_application_json_object: Optional[GetWebhookByIDDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -78,3 +86,4 @@ class GetWebhookByIDResponse:
     webhook: Optional[GetWebhookByIDWebhook] = dataclasses.field(default=None)
     r"""A webhook"""
     
+

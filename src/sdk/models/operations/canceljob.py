@@ -8,35 +8,41 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class CancelJobRequest:
-    
     job_number: Any = dataclasses.field(metadata={'path_param': { 'field_name': 'job-number', 'style': 'simple', 'explode': False }})
     r"""The number of the job."""
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CancelJobDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CancelJobMessageResponse:
     r"""message response"""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable message"""
     
 
+
+
+
 @dataclasses.dataclass
 class CancelJobResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     cancel_job_default_application_json_object: Optional[CancelJobDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -44,3 +50,4 @@ class CancelJobResponse:
     message_response: Optional[CancelJobMessageResponse] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -16,42 +16,48 @@ class GetWebhooksScopeType(str, Enum):
     PROJECT = 'project'
 
 
+
 @dataclasses.dataclass
 class GetWebhooksRequest:
-    
     scope_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'scope-id', 'style': 'form', 'explode': True }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
     scope_type: GetWebhooksScopeType = dataclasses.field(metadata={'query_param': { 'field_name': 'scope-type', 'style': 'form', 'explode': True }})
     r"""Type of the scope being used"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhooksDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class GetWebhooks200ApplicationJSONWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhooks200ApplicationJSONWebhookScope:
     r"""The scope in which the relevant events that will trigger webhooks"""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the scope being used"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhooks200ApplicationJSONWebhook:
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
     events: list[GetWebhooks200ApplicationJSONWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
@@ -72,19 +78,23 @@ class GetWebhooks200ApplicationJSONWebhook:
     r"""Whether to enforce TLS certificate verification when delivering the webhook"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWebhooks200ApplicationJSON:
     r"""A list of webhooks"""
-    
     items: list[GetWebhooks200ApplicationJSONWebhook] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetWebhooksResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_webhooks_200_application_json_object: Optional[GetWebhooks200ApplicationJSON] = dataclasses.field(default=None)
@@ -93,3 +103,4 @@ class GetWebhooksResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

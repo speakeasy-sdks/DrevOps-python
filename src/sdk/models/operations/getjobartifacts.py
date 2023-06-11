@@ -8,28 +8,32 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetJobArtifactsRequest:
-    
     job_number: Any = dataclasses.field(metadata={'path_param': { 'field_name': 'job-number', 'style': 'simple', 'explode': False }})
     r"""The number of the job."""
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobArtifactsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobArtifactsArtifactListResponseArtifact:
     r"""An artifact"""
-    
     node_index: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('node_index') }})
     r"""The index of the node that stored the artifact."""
     path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path') }})
@@ -38,19 +42,23 @@ class GetJobArtifactsArtifactListResponseArtifact:
     r"""The URL to download the artifact contents."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobArtifactsArtifactListResponse:
     r"""A paginated list of the job's artifacts."""
-    
     items: list[GetJobArtifactsArtifactListResponseArtifact] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetJobArtifactsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     artifact_list_response: Optional[GetJobArtifactsArtifactListResponse] = dataclasses.field(default=None)
@@ -59,3 +67,4 @@ class GetJobArtifactsResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

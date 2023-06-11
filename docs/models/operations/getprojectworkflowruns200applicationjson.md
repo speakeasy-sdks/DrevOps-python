@@ -1,0 +1,11 @@
+# GetProjectWorkflowRuns200ApplicationJSON
+
+Paginated recent workflow runs.
+
+
+## Fields
+
+| Field                                                                                                                           | Type                                                                                                                            | Required                                                                                                                        | Description                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                                                                                                                         | list[[GetProjectWorkflowRuns200ApplicationJSONItems](../../models/operations/getprojectworkflowruns200applicationjsonitems.md)] | :heavy_check_mark:                                                                                                              | Recent workflow runs.                                                                                                           |
+| `next_page_token`                                                                                                               | *str*                                                                                                                           | :heavy_check_mark:                                                                                                              | A token to pass as a `page-token` query parameter to return the next page of results.                                           |

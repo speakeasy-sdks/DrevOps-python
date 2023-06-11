@@ -8,35 +8,41 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DeleteCheckoutKeyRequest:
-    
     fingerprint: str = dataclasses.field(metadata={'path_param': { 'field_name': 'fingerprint', 'style': 'simple', 'explode': False }})
     r"""An SSH key fingerprint."""
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DeleteCheckoutKeyDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DeleteCheckoutKeyMessageResponse:
     r"""message response"""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable message"""
     
 
+
+
+
 @dataclasses.dataclass
 class DeleteCheckoutKeyResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     delete_checkout_key_default_application_json_object: Optional[DeleteCheckoutKeyDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -45,3 +51,4 @@ class DeleteCheckoutKeyResponse:
     r"""A confirmation message."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

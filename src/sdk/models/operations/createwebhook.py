@@ -21,21 +21,23 @@ class CreateWebhookRequestBodyScopeType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateWebhookRequestBodyScope:
     r"""The scope in which the relevant events that will trigger webhooks"""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
     type: CreateWebhookRequestBodyScopeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the scope being used"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateWebhookRequestBody:
     r"""The parameters for a create webhook request"""
-    
     events: list[CreateWebhookRequestBodyEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     r"""Events that will trigger the webhook"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -50,34 +52,40 @@ class CreateWebhookRequestBody:
     r"""Whether to enforce TLS certificate verification when delivering the webhook"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateWebhookDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class CreateWebhookWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateWebhookWebhookScope:
     r"""The scope in which the relevant events that will trigger webhooks"""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the scope being used"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateWebhookWebhook:
     r"""A webhook"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
     events: list[CreateWebhookWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
@@ -98,9 +106,11 @@ class CreateWebhookWebhook:
     r"""Whether to enforce TLS certificate verification when delivering the webhook"""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateWebhookResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_webhook_default_application_json_object: Optional[CreateWebhookDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -109,3 +119,4 @@ class CreateWebhookResponse:
     webhook: Optional[CreateWebhookWebhook] = dataclasses.field(default=None)
     r"""A webhook"""
     
+

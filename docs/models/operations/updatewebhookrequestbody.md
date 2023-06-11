@@ -1,0 +1,14 @@
+# UpdateWebhookRequestBody
+
+The parameters for an update webhook request
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `events`                                                                                          | list[[UpdateWebhookRequestBodyEvents](../../models/operations/updatewebhookrequestbodyevents.md)] | :heavy_minus_sign:                                                                                | Events that will trigger the webhook                                                              |
+| `name`                                                                                            | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | Name of the webhook                                                                               |
+| `signing_secret`                                                                                  | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | Secret used to build an HMAC hash of the payload and passed as a header in the webhook request    |
+| `url`                                                                                             | *Optional[str]*                                                                                   | :heavy_minus_sign:                                                                                | URL to deliver the webhook to. Note: protocol must be included as well (only https is supported)  |
+| `verify_tls`                                                                                      | *Optional[bool]*                                                                                  | :heavy_minus_sign:                                                                                | Whether to enforce TLS certificate verification when delivering the webhook                       |

@@ -13,10 +13,10 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class TriggerPipelineTriggerPipelineParameters:
     r"""The information you can supply when triggering a pipeline."""
-    
     branch: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('branch'), 'exclude': lambda f: f is None }})
     r"""The branch where the pipeline ran. The HEAD commit on this branch was used for the pipeline. Note that `branch` and `tag` are mutually exclusive. To trigger a pipeline for a PR by number use `pull/<number>/head` for the PR ref or `pull/<number>/merge` for the merge ref (GitHub only)."""
     parameters: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
@@ -25,21 +25,27 @@ class TriggerPipelineTriggerPipelineParameters:
     r"""The tag used by the pipeline. The commit that this tag points to was used for the pipeline. Note that `branch` and `tag` are mutually exclusive."""
     
 
+
+
+
 @dataclasses.dataclass
 class TriggerPipelineRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     request_body: Optional[TriggerPipelineTriggerPipelineParameters] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class TriggerPipelineDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class TriggerPipelinePipelineCreationState(str, Enum):
     r"""The current state of the pipeline."""
     CREATED = 'created'
@@ -50,10 +56,10 @@ class TriggerPipelinePipelineCreationState(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class TriggerPipelinePipelineCreation:
     r"""A pipeline creation response."""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the pipeline was created."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -64,9 +70,11 @@ class TriggerPipelinePipelineCreation:
     r"""The current state of the pipeline."""
     
 
+
+
+
 @dataclasses.dataclass
 class TriggerPipelineResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     pipeline_creation: Optional[TriggerPipelinePipelineCreation] = dataclasses.field(default=None)
@@ -75,3 +83,4 @@ class TriggerPipelineResponse:
     trigger_pipeline_default_application_json_object: Optional[TriggerPipelineDefaultApplicationJSON] = dataclasses.field(default=None)
     r"""Error response."""
     
+

@@ -8,9 +8,9 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetricsRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     workflow_name: str = dataclasses.field(metadata={'path_param': { 'field_name': 'workflow-name', 'style': 'simple', 'explode': False }})
@@ -21,18 +21,22 @@ class GetProjectWorkflowTestMetricsRequest:
     r"""The name of a vcs branch. If not passed we will scope the API call to the default branch."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetricsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetrics200ApplicationJSONMostFailedTests:
-    
     classname: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classname') }})
     r"""The class the test belongs to."""
     failed_runs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failed_runs') }})
@@ -53,10 +57,12 @@ class GetProjectWorkflowTestMetrics200ApplicationJSONMostFailedTests:
     r"""The total number of times the test was run."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetrics200ApplicationJSONSlowestTests:
-    
     classname: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classname') }})
     r"""The class the test belongs to."""
     failed_runs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failed_runs') }})
@@ -77,11 +83,13 @@ class GetProjectWorkflowTestMetrics200ApplicationJSONSlowestTests:
     r"""The total number of times the test was run."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetrics200ApplicationJSONTestRunsTestCounts:
     r"""Test counts for a given pipeline number"""
-    
     error: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error') }})
     r"""The number of tests with the error status"""
     failure: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failure') }})
@@ -94,10 +102,12 @@ class GetProjectWorkflowTestMetrics200ApplicationJSONTestRunsTestCounts:
     r"""The total number of tests"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetrics200ApplicationJSONTestRuns:
-    
     pipeline_number: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipeline_number') }})
     r"""The number of the pipeline associated with the provided test counts"""
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
@@ -108,11 +118,13 @@ class GetProjectWorkflowTestMetrics200ApplicationJSONTestRuns:
     r"""The ID of the workflow associated with the provided test counts"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetrics200ApplicationJSON:
     r"""Project level test metrics response"""
-    
     average_test_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('average_test_count') }})
     r"""The average number of tests executed per run"""
     most_failed_tests: list[GetProjectWorkflowTestMetrics200ApplicationJSONMostFailedTests] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('most_failed_tests') }})
@@ -129,9 +141,11 @@ class GetProjectWorkflowTestMetrics200ApplicationJSON:
     r"""The total number of test runs"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetProjectWorkflowTestMetricsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_project_workflow_test_metrics_200_application_json_object: Optional[GetProjectWorkflowTestMetrics200ApplicationJSON] = dataclasses.field(default=None)
@@ -140,3 +154,4 @@ class GetProjectWorkflowTestMetricsResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -17,14 +17,16 @@ class CreateContextRequestBodyOwner2Type(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateContextRequestBodyOwner2:
-    
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""A string that represents an organization. Specify either this or id. Cannot be used for accounts."""
     type: Optional[CreateContextRequestBodyOwner2Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The type of owner. Defaults to \\"organization\\". Accounts are only used as context owners in server and must be specified by an id instead of a slug."""
     
+
+
 class CreateContextRequestBodyOwner1Type(str, Enum):
     r"""The type of the owner. Defaults to \\"organization\\". Accounts are only used as context owners in server."""
     ACCOUNT = 'account'
@@ -32,37 +34,43 @@ class CreateContextRequestBodyOwner1Type(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateContextRequestBodyOwner1:
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the owner of the context. Specify either this or slug."""
     type: Optional[CreateContextRequestBodyOwner1Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The type of the owner. Defaults to \\"organization\\". Accounts are only used as context owners in server."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateContextRequestBody:
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The user defined name of the context."""
     owner: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('owner') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateContextDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateContextContext:
     r"""The new context"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the context was created."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -71,9 +79,11 @@ class CreateContextContext:
     r"""The user defined name of the context."""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateContextResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     context: Optional[CreateContextContext] = dataclasses.field(default=None)
@@ -82,3 +92,4 @@ class CreateContextResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

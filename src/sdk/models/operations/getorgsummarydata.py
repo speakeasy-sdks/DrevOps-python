@@ -6,7 +6,15 @@ import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class GetOrgSummaryDataProjectNames:
+    r"""List of project names."""
+    
+
 
 class GetOrgSummaryDataReportingWindow(str, Enum):
     r"""The time window used to calculate summary metrics."""
@@ -17,30 +25,34 @@ class GetOrgSummaryDataReportingWindow(str, Enum):
     LAST_60_DAYS = 'last-60-days'
 
 
+
 @dataclasses.dataclass
 class GetOrgSummaryDataRequest:
-    
     org_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org-slug', 'style': 'simple', 'explode': False }})
     r"""Org slug in the form `vcs-slug/org-name`. The `/` characters may be URL-escaped."""
-    project_names: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'project-names', 'style': 'form', 'explode': True }})
+    project_names: Optional[GetOrgSummaryDataProjectNames] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'project-names', 'style': 'form', 'explode': True }})
     r"""List of project names."""
     reporting_window: Optional[GetOrgSummaryDataReportingWindow] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'reporting-window', 'style': 'form', 'explode': True }})
     r"""The time window used to calculate summary metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryDataDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSONOrgDataMetrics:
     r"""Metrics for a single org metrics."""
-    
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
     throughput: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('throughput') }})
     r"""The average number of runs per day."""
@@ -52,11 +64,13 @@ class GetOrgSummaryData200ApplicationJSONOrgDataMetrics:
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSONOrgDataTrends:
     r"""Trends for a single org."""
-    
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
     r"""The trend value for the success rate."""
     throughput: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('throughput') }})
@@ -69,22 +83,26 @@ class GetOrgSummaryData200ApplicationJSONOrgDataTrends:
     r"""The trend value for total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSONOrgData:
     r"""Aggregated metrics for an org, with trends."""
-    
     metrics: GetOrgSummaryData200ApplicationJSONOrgDataMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Metrics for a single org metrics."""
     trends: GetOrgSummaryData200ApplicationJSONOrgDataTrends = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trends') }})
     r"""Trends for a single org."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSONOrgProjectDataMetrics:
     r"""Metrics for a single project, across all branches."""
-    
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
     total_credits_used: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_credits_used') }})
     r"""The total credits consumed over the current timeseries interval."""
@@ -94,11 +112,13 @@ class GetOrgSummaryData200ApplicationJSONOrgProjectDataMetrics:
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSONOrgProjectDataTrends:
     r"""Trends for a single project, across all branches."""
-    
     success_rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('success_rate') }})
     r"""The trend value for the success rate."""
     total_credits_used: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_credits_used') }})
@@ -109,10 +129,12 @@ class GetOrgSummaryData200ApplicationJSONOrgProjectDataTrends:
     r"""The trend value for total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSONOrgProjectData:
-    
     metrics: GetOrgSummaryData200ApplicationJSONOrgProjectDataMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Metrics for a single project, across all branches."""
     project_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('project_name') }})
@@ -121,11 +143,13 @@ class GetOrgSummaryData200ApplicationJSONOrgProjectData:
     r"""Trends for a single project, across all branches."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrgSummaryData200ApplicationJSON:
     r"""Summary metrics with trends for the entire org, and for each project."""
-    
     all_projects: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('all_projects') }})
     r"""A list of all the project names in the organization."""
     org_data: GetOrgSummaryData200ApplicationJSONOrgData = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_data') }})
@@ -134,9 +158,11 @@ class GetOrgSummaryData200ApplicationJSON:
     r"""Metrics for a single project, across all branches"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetOrgSummaryDataResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_org_summary_data_200_application_json_object: Optional[GetOrgSummaryData200ApplicationJSON] = dataclasses.field(default=None)
@@ -145,3 +171,4 @@ class GetOrgSummaryDataResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

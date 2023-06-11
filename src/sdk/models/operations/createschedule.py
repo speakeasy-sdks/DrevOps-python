@@ -43,10 +43,10 @@ class CreateScheduleCreateScheduleParametersTimetable2Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleCreateScheduleParametersTimetable2:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_month: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month') }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -58,6 +58,8 @@ class CreateScheduleCreateScheduleParametersTimetable2:
     months: Optional[list[CreateScheduleCreateScheduleParametersTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
+
+
 class CreateScheduleCreateScheduleParametersTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -85,10 +87,10 @@ class CreateScheduleCreateScheduleParametersTimetable1Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleCreateScheduleParametersTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_week: list[CreateScheduleCreateScheduleParametersTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -101,11 +103,13 @@ class CreateScheduleCreateScheduleParametersTimetable1:
     r"""Months in which the schedule triggers."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleCreateScheduleParameters:
     r"""The parameters for a create schedule request"""
-    
     attribution_actor: CreateScheduleCreateScheduleParametersAttributionActor = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribution-actor') }})
     r"""The attribution-actor of the scheduled pipeline."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -118,27 +122,33 @@ class CreateScheduleCreateScheduleParameters:
     r"""Description of the schedule."""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateScheduleRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     request_body: Optional[CreateScheduleCreateScheduleParameters] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleScheduleUser:
     r"""The attribution actor who will run the scheduled pipeline."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the user."""
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
@@ -146,6 +156,8 @@ class CreateScheduleScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
+
+
 class CreateScheduleScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -173,10 +185,10 @@ class CreateScheduleScheduleTimetable2Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleScheduleTimetable2:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_month: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month') }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -188,6 +200,8 @@ class CreateScheduleScheduleTimetable2:
     months: Optional[list[CreateScheduleScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
+
+
 class CreateScheduleScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -215,10 +229,10 @@ class CreateScheduleScheduleTimetable1Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_week: list[CreateScheduleScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -231,11 +245,13 @@ class CreateScheduleScheduleTimetable1:
     r"""Months in which the schedule triggers."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateScheduleSchedule:
     r"""A schedule response"""
-    
     actor: CreateScheduleScheduleUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actor') }})
     r"""The attribution actor who will run the scheduled pipeline."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -256,9 +272,11 @@ class CreateScheduleSchedule:
     r"""The date and time the pipeline was last updated."""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateScheduleResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_schedule_default_application_json_object: Optional[CreateScheduleDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -267,3 +285,4 @@ class CreateScheduleResponse:
     schedule: Optional[CreateScheduleSchedule] = dataclasses.field(default=None)
     r"""A schedule object."""
     
+

@@ -12,26 +12,30 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetScheduleByIDRequest:
-    
     schedule_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'schedule-id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the schedule."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetScheduleByIDDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetScheduleByIDScheduleUser:
     r"""The attribution actor who will run the scheduled pipeline."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the user."""
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
@@ -39,6 +43,8 @@ class GetScheduleByIDScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
+
+
 class GetScheduleByIDScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -66,10 +72,10 @@ class GetScheduleByIDScheduleTimetable2Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetScheduleByIDScheduleTimetable2:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_month: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month') }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -81,6 +87,8 @@ class GetScheduleByIDScheduleTimetable2:
     months: Optional[list[GetScheduleByIDScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
+
+
 class GetScheduleByIDScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -108,10 +116,10 @@ class GetScheduleByIDScheduleTimetable1Months(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetScheduleByIDScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_week: list[GetScheduleByIDScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -124,11 +132,13 @@ class GetScheduleByIDScheduleTimetable1:
     r"""Months in which the schedule triggers."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetScheduleByIDSchedule:
     r"""A schedule response"""
-    
     actor: GetScheduleByIDScheduleUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actor') }})
     r"""The attribution actor who will run the scheduled pipeline."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -149,9 +159,11 @@ class GetScheduleByIDSchedule:
     r"""The date and time the pipeline was last updated."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetScheduleByIDResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_schedule_by_id_default_application_json_object: Optional[GetScheduleByIDDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -160,3 +172,4 @@ class GetScheduleByIDResponse:
     schedule: Optional[GetScheduleByIDSchedule] = dataclasses.field(default=None)
     r"""A schedule object."""
     
+

@@ -12,28 +12,32 @@ from sdk import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class ListSchedulesForProjectRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     page_token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'page-token', 'style': 'form', 'explode': True }})
     r"""A token to retrieve the next page of results."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListSchedulesForProjectDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListSchedulesForProject200ApplicationJSONScheduleUser:
     r"""The attribution actor who will run the scheduled pipeline."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The unique ID of the user."""
     login: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login') }})
@@ -41,6 +45,8 @@ class ListSchedulesForProject200ApplicationJSONScheduleUser:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""The name of the user."""
     
+
+
 class ListSchedulesForProject200ApplicationJSONScheduleTimetable2DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -68,10 +74,10 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable2Months(str, Enu
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListSchedulesForProject200ApplicationJSONScheduleTimetable2:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_month: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-month') }})
     r"""Days in a month in which the schedule triggers. This is mutually exclusive with days in a week."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -83,6 +89,8 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable2:
     months: Optional[list[ListSchedulesForProject200ApplicationJSONScheduleTimetable2Months]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('months'), 'exclude': lambda f: f is None }})
     r"""Months in which the schedule triggers."""
     
+
+
 class ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeek(str, Enum):
     r"""Day in a week, in three letters format"""
     TUE = 'TUE'
@@ -110,10 +118,10 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable1Months(str, Enu
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListSchedulesForProject200ApplicationJSONScheduleTimetable1:
     r"""Timetable that specifies when a schedule triggers."""
-    
     days_of_week: list[ListSchedulesForProject200ApplicationJSONScheduleTimetable1DaysOfWeek] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('days-of-week') }})
     r"""Days in a week in which the schedule triggers."""
     hours_of_day: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hours-of-day') }})
@@ -126,11 +134,13 @@ class ListSchedulesForProject200ApplicationJSONScheduleTimetable1:
     r"""Months in which the schedule triggers."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListSchedulesForProject200ApplicationJSONSchedule:
     r"""A schedule response"""
-    
     actor: ListSchedulesForProject200ApplicationJSONScheduleUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actor') }})
     r"""The attribution actor who will run the scheduled pipeline."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
@@ -151,19 +161,23 @@ class ListSchedulesForProject200ApplicationJSONSchedule:
     r"""The date and time the pipeline was last updated."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListSchedulesForProject200ApplicationJSON:
     r"""A sequence of schedules"""
-    
     items: list[ListSchedulesForProject200ApplicationJSONSchedule] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class ListSchedulesForProjectResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_schedules_for_project_200_application_json_object: Optional[ListSchedulesForProject200ApplicationJSON] = dataclasses.field(default=None)
@@ -172,3 +186,4 @@ class ListSchedulesForProjectResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -9,17 +9,19 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetCollaborationsDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetCollaborationsCollaboration:
-    
     avatar_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('avatar_url') }})
     r"""URL to the user's avatar on the VCS"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -32,9 +34,11 @@ class GetCollaborationsCollaboration:
     r"""The VCS provider"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetCollaborationsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     collaborations: Optional[list[GetCollaborationsCollaboration]] = dataclasses.field(default=None)
@@ -43,3 +47,4 @@ class GetCollaborationsResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

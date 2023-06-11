@@ -17,9 +17,9 @@ class GetJobTimeseriesGranularity(str, Enum):
     HOURLY = 'hourly'
 
 
+
 @dataclasses.dataclass
 class GetJobTimeseriesRequest:
-    
     project_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'project-slug', 'style': 'simple', 'explode': False }})
     r"""Project slug in the form `vcs-slug/org-name/repo-name`. The `/` characters may be URL-escaped."""
     workflow_name: str = dataclasses.field(metadata={'path_param': { 'field_name': 'workflow-name', 'style': 'simple', 'explode': False }})
@@ -34,19 +34,23 @@ class GetJobTimeseriesRequest:
     r"""Include only executions that started at or after this date. This must be specified if an end-date is provided."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobTimeseriesDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobTimeseries200ApplicationJSONItemsMetricsDurationMetrics:
     r"""Metrics relating to the duration of runs for a workflow."""
-    
     max: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max') }})
     r"""The max duration, in seconds, among a group of runs."""
     median: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('median') }})
@@ -59,11 +63,13 @@ class GetJobTimeseries200ApplicationJSONItemsMetricsDurationMetrics:
     r"""The total duration, in seconds, added across a group of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobTimeseries200ApplicationJSONItemsMetrics:
     r"""Metrics relating to a workflow's runs."""
-    
     duration_metrics: GetJobTimeseries200ApplicationJSONItemsMetricsDurationMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('duration_metrics') }})
     r"""Metrics relating to the duration of runs for a workflow."""
     failed_runs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('failed_runs') }})
@@ -80,10 +86,12 @@ class GetJobTimeseries200ApplicationJSONItemsMetrics:
     r"""The total number of runs."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobTimeseries200ApplicationJSONItems:
-    
     max_ended_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('max_ended_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The end time of the last execution included in the metrics."""
     metrics: GetJobTimeseries200ApplicationJSONItemsMetrics = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
@@ -96,20 +104,24 @@ class GetJobTimeseries200ApplicationJSONItems:
     r"""The start of the interval for timeseries metrics."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJobTimeseries200ApplicationJSON:
     r"""Project level timeseries metrics response"""
-    
     items: list[GetJobTimeseries200ApplicationJSONItems] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""Aggregate metrics for a workflow at a time granularity"""
     next_page_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('next_page_token') }})
     r"""A token to pass as a `page-token` query parameter to return the next page of results."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetJobTimeseriesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_job_timeseries_200_application_json_object: Optional[GetJobTimeseries200ApplicationJSON] = dataclasses.field(default=None)
@@ -118,3 +130,4 @@ class GetJobTimeseriesResponse:
     r"""Error response."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

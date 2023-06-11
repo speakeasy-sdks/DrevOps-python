@@ -17,10 +17,10 @@ class UpdateWebhookRequestBodyEvents(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateWebhookRequestBody:
     r"""The parameters for an update webhook request"""
-    
     events: Optional[list[UpdateWebhookRequestBodyEvents]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events'), 'exclude': lambda f: f is None }})
     r"""Events that will trigger the webhook"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
@@ -33,42 +33,50 @@ class UpdateWebhookRequestBody:
     r"""Whether to enforce TLS certificate verification when delivering the webhook"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateWebhookRequest:
-    
     webhook_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'webhook-id', 'style': 'simple', 'explode': False }})
     r"""ID of the webhook (UUID)"""
     request_body: Optional[UpdateWebhookRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateWebhookDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class UpdateWebhookWebhookEvents(str, Enum):
     WORKFLOW_COMPLETED = 'workflow-completed'
     JOB_COMPLETED = 'job-completed'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateWebhookWebhookScope:
     r"""The scope in which the relevant events that will trigger webhooks"""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""ID of the scope being used (at the moment, only project ID is supported)"""
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the scope being used"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateWebhookWebhook:
     r"""A webhook"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created-at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the webhook was created."""
     events: list[UpdateWebhookWebhookEvents] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
@@ -89,9 +97,11 @@ class UpdateWebhookWebhook:
     r"""Whether to enforce TLS certificate verification when delivering the webhook"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateWebhookResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
@@ -100,3 +110,4 @@ class UpdateWebhookResponse:
     webhook: Optional[UpdateWebhookWebhook] = dataclasses.field(default=None)
     r"""A webhook"""
     
+

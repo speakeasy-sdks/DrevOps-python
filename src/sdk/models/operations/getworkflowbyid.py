@@ -12,20 +12,24 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetWorkflowByIDRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the workflow."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowByIDDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
+
+
 class GetWorkflowByIDWorkflowStatus(str, Enum):
     r"""The current status of the workflow."""
     SUCCESS = 'success'
@@ -44,10 +48,10 @@ class GetWorkflowByIDWorkflowTag(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetWorkflowByIDWorkflow:
     r"""A workflow"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""The date and time the workflow was created."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -71,9 +75,11 @@ class GetWorkflowByIDWorkflow:
     r"""Tag used for the workflow"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetWorkflowByIDResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_workflow_by_id_default_application_json_object: Optional[GetWorkflowByIDDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -82,3 +88,4 @@ class GetWorkflowByIDResponse:
     workflow: Optional[GetWorkflowByIDWorkflow] = dataclasses.field(default=None)
     r"""A workflow object."""
     
+

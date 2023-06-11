@@ -8,33 +8,39 @@ from sdk import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DeleteScheduleByIDRequest:
-    
     schedule_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'schedule-id', 'style': 'simple', 'explode': False }})
     r"""The unique ID of the schedule."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DeleteScheduleByIDDefaultApplicationJSON:
     r"""Error response."""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DeleteScheduleByIDMessageResponse:
     r"""message response"""
-    
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""A human-readable message"""
     
 
+
+
+
 @dataclasses.dataclass
 class DeleteScheduleByIDResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     delete_schedule_by_id_default_application_json_object: Optional[DeleteScheduleByIDDefaultApplicationJSON] = dataclasses.field(default=None)
@@ -43,3 +49,4 @@ class DeleteScheduleByIDResponse:
     r"""A confirmation message."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
